@@ -1,0 +1,80 @@
+@import "const";
+
+.btn {
+  color: @main-text;
+  background-color: @main-accent;
+  font-size: @font-main-text;
+  height: 60px;
+  padding: 0 60px 0 60px;
+  border: 0;
+  font-weight: 700;
+  cursor: pointer;
+
+  &.circle {
+    border-radius: 100px;
+  }
+
+  &:hover {
+    opacity: 0.9;
+  }
+}
+
+.line {
+  height: 3px;
+  width: 100%;
+  background-color: @main-accent;
+}
+
+.icon {
+  width: 44px;
+  height: 44px;
+  background-color: #cccccc;
+  border-radius: 100%;
+
+  &:hover {
+    background-color: @main-accent;
+  }
+
+  .icon-img {
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 44px;
+    height: 44px;
+
+    &.vk {
+      background-image: url("../img/vk.png");
+    }
+
+    &.telegram {
+      background-image: url("../img/telegram.png");
+    }
+  }
+
+}
+
+.navlink {
+  display: flex;
+  gap: 18px;
+  cursor: pointer;
+
+  .navlink_text {
+    color: #919095;
+    font-size: 24px;
+    align-items: center;
+    line-height: 36px;
+  }
+
+  .navlink_arrow {
+    background-image: url("../img/arrow.png");
+    height: 36px;
+    width: 12px;
+  }
+  &:hover {
+    .navlink_text {
+      color: @main-accent;
+    }
+    .navlink_arrow{
+      background-image: url("../img/arrow_active.png");
+    }
+  }
+}
