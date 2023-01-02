@@ -1,4 +1,3 @@
-
 @import "const";
 
 //Шапка и логотип
@@ -6,26 +5,64 @@ header {
   display: flex;
   justify-content: space-between;
   height: 80px;
+
   .logo {
     display: flex;
     align-items: center;
-    img{
+
+    img {
       width: 90px;
       height: 50px;
     }
   }
+
   nav {
     display: flex;
     align-items: center;
 
-    ul{
+    ul {
       display: flex;
       gap: 30px;
-      li{
+
+      li {
         font-weight: 600;
         color: @main-text;
       }
     }
   }
 }
+//Баннер
 
+.main-banner{
+  display: flex;
+  justify-content: center;
+  height: 90vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.806), rgba(0, 0, 0, 0.7)), url('../img/main-banner.jpg') no-repeat;
+  background-size: cover;
+  background-position: center center;
+  width: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  .banner-items{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 620px;
+    .logo {
+      width: 280px;
+      height: 156px;
+      margin-bottom: 55px;
+      img{
+        width: 100%;
+        height: 100%;
+      }
+    }
+    h1{
+      text-align: center;
+      margin-bottom: 55px;
+    }
+  }
+
+}
