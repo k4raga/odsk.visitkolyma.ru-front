@@ -453,39 +453,223 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    h1{
+
+    h1 {
       font-size: 130px;
     }
+
     img {
       width: 200px;
       height: 115px;
     }
   }
+
   .footer-email {
     font-weight: 700;
     color: @main-accent;
     font-size: 22px;
     margin-bottom: 50px;
   }
-  .contacts-items{
+
+  .contacts-items {
     display: flex;
     justify-content: space-between;
     margin-bottom: 100px;
-    .contacts-item{
+
+    .contacts-item {
       width: 290px;
-    .line {
-      width: 80px;
-      margin-bottom: 10px;
-      background-color: @main-text;
-    }
+
+      .line {
+        width: 80px;
+        margin-bottom: 10px;
+        background-color: @main-text;
+      }
     }
   }
+
   .tur-magadan {
     display: flex;
     justify-content: center;
     align-items: center;
-    .title{
+
+    .title {
       font-weight: 700;
     }
   }
 }
+
+//Детальная страница
+//подложка
+.wrapper {
+  margin-top: 64px;
+  margin-bottom: 128px;
+  background-color: white;
+  .back{
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 36px;
+    letter-spacing: 0.5px;
+    color: #919095;
+    margin-bottom: 36px;
+    img{
+      width: 12px;
+      height: 36px
+    }
+  }
+  .more-wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1162px;
+    .previous{
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 36px;
+      letter-spacing: 0.5px;
+      color: #919095;
+      margin-bottom: 36px;
+      img{
+        width: 12px;
+        height: 36px
+      }
+    }
+    .next{
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 36px;
+      letter-spacing: 0.5px;
+      color: #919095;
+      margin-bottom: 36px;
+      img{
+        transform: rotate(180deg);
+        width: 12px;
+        height: 36px
+      }
+    }
+  }
+}
+
+.about-nominee {
+  display: flex;
+  gap: 32px;
+  flex-direction: column;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 26px;
+  letter-spacing: 0.5px;
+  color: #5F5E63;
+  margin-bottom: 48px;
+  width: 1162px;
+  .photographer-wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .btn{
+      height: 30px;
+    }
+    .photographer {
+      display: flex;
+      gap: 32px;
+      align-items: center;
+
+      .photo-nominee {
+        img {
+          width: 100px;
+          height: 100px;
+        }
+      }
+
+      .name-nominee {
+        color: #19181D;
+        font-weight: 700;
+        font-size: 50px;
+        line-height: 55px;
+      }
+
+      .social-nominee {
+        img {
+          width: 44px;
+          height: 44px;
+        }
+      }
+    }
+  }
+
+
+  .wrapper-details {
+    display: flex;
+    gap: 32px;
+
+    .profession {
+      display: flex;
+      gap: 6px;
+
+      .description {
+        color: #19181d;
+      }
+    }
+      .genre {
+        display: flex;
+        gap: 6px;
+
+        .description {
+          color: #19181d;
+        }
+      }
+    }
+    .more-info{
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      width: 766px;
+      .path{
+        display: flex;
+        flex-direction: column;
+        gap:24px;
+        .title{
+          font-weight: 700;
+          font-size: 20px;
+          line-height: 31px;
+          letter-spacing: 0.5px;
+          color: #19181D;
+        }
+      }
+      .event{
+        display: flex;
+        flex-direction: column;
+        gap:24px;
+        .title{
+          font-weight: 700;
+          font-size: 20px;
+          line-height: 31px;
+          letter-spacing: 0.5px;
+          color: #19181D;
+        }
+      }
+    }
+
+  }
+//Галлерея
+.gallery-nominee{
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-bottom: 48px;
+  width: 1162px;
+  .photo-item{
+    img{
+      max-width: 1162px;
+    }
+  }
+}
+

@@ -25,11 +25,15 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             filename: "index.html",
-            template: path.resolve(__dirname, 'src', 'index.html')
+            template: path.resolve(__dirname, 'src/html', 'index.html')
         }),
         new HtmlWebpackPlugin({
             filename: "ui.html",
             template: path.resolve(__dirname, 'src/html', 'ui.html')
+        }),
+        new HtmlWebpackPlugin({
+            filename: "detail.html",
+            template: path.resolve(__dirname, 'src/html', 'detail.html')
         }),
         new MiniCssExtractPlugin({
             filename: "style.css",
