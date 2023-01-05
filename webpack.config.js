@@ -6,6 +6,8 @@ const target = devMode ? 'web' : 'browserslist';
 const devtool = devMode ? 'source-map' : undefined;
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
+const SitePath = 'htdocs'
+const TemplatePath = 'local/templates/visitkolyma/'
 
 module.exports = {
     mode,
@@ -15,35 +17,47 @@ module.exports = {
         hot: true,
         historyApiFallback: true,
     },
-    entry: ['@babel/polyfill',path.resolve(__dirname, 'src', 'index.js')],
+    optimization: {
+        minimize: false,
+    },
+    entry: ['@babel/polyfill', path.resolve(__dirname, 'src', 'index.js')],
     output: {
-        path: path.resolve(__dirname, 'dist'),
-        clean: true,
-        filename: 'scripts.js',
-        publicPath: '/'
+        path: path.resolve(__dirname, SitePath),
+        filename: TemplatePath + 'scripts.js',
+        publicPath: '/',
+        assetModuleFilename: TemplatePath + "assets/[name][ext]"
     },
     plugins: [
         new HtmlWebpackPlugin({
-            filename: "index.html",
-            template: path.resolve(__dirname, 'src/html', 'index.html')
+            filename: path.resolve(__dirname, SitePath, mode === 'production' ? 'index.php' : 'index.html'),
+            template: path.resolve(__dirname, 'src/html', 'index.html'),
+            minimize: {
+                removeComments: false,
+                collapseWhitespace: false,
+            },
         }),
+        // new HtmlWebpackPlugin({
+        //     filename: "ui.html",
+        //     template: path.resolve(__dirname, 'src/html', 'ui.html')
+        // }),
         new HtmlWebpackPlugin({
-            filename: "ui.html",
-            template: path.resolve(__dirname, 'src/html', 'ui.html')
-        }),
-        new HtmlWebpackPlugin({
-            filename: "detail.html",
-            template: path.resolve(__dirname, 'src/html', 'detail.html')
+            filename: path.resolve(__dirname, SitePath, 'detail', mode === 'production' ? 'index.php' : 'index.html'),
+            template: path.resolve(__dirname, 'src/html', 'detail.html'),
+            minimize: {
+                removeComments: false,
+                collapseWhitespace: false,
+            },
         }),
         new MiniCssExtractPlugin({
-            filename: "style.css",
+            filename: TemplatePath + "styles.css",
         })
     ],
     module: {
-        rules: [{
-            test: /\.html$/i,
-            loader: "html-loader",
-        },
+        rules: [
+            {
+                test: /\.html$/i,
+                loader: "html-loader",
+            },
             {
                 test: /\.(c|le)ss$/i,
                 use: [
