@@ -1,1 +1,24 @@
-console.log('221')
+window.addEventListener('DOMContentLoaded', (e) => {
+    const BUTTONS_VOTE = document.querySelectorAll('.btn-vote')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+})

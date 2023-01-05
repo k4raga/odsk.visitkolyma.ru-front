@@ -25,10 +25,14 @@
 
 <main>
     <div class="wrapper container">
-        <div class="back">
-            <img src="../img/arror_details.png" alt="">
-            К номинантам
-        </div>
+        <a href="index.html">
+            <div class="back">
+
+                <img src="../img/arror_details.png" alt="">
+                К номинантам
+
+            </div>
+        </a>
         <section class="about-nominee">
             <div class="photographer-wrapper">
                 <div class="photographer">
@@ -41,7 +45,7 @@
                     </div>
 
                 </div>
-                <div class="btn">Проголосовать</div>
+                <div class="btn btn-vote">Проголосовать</div>
             </div>
             <div class="wrapper-details">
                 <div class="profession">
@@ -84,12 +88,61 @@
                 <img src="../img/arror_details.png" alt="">
                 Предыдущий
             </div>
-            <div class="btn">Проголосовать</div>
+            <div class="btn btn-vote">Проголосовать</div>
             <div class="next">
                 Следующий
                 <img src="../img/arror_details.png" alt=""></div>
         </div>
+        <div class="popup authorization">
 
+            <div class="popup-block">
+                <div class="close">
+                    <img src="../img/close.png" alt="Закрыть">
+                </div>
+                <div class="title">Авторизоваться</div>
+                <div class="subtitle">Для того чтобы проголосовать необходимо авторизоваться,<br>
+                    после этого вы сможете проголосовать
+                </div>
+                <form class="authorization-form" action="">
+
+                    <label name="FIO">ФИО</label>
+                    <input type="text" name="FIO" placeholder="Ваше ФИО"></input>
+
+                    <label name="email">Электронный адрес</label>
+                    <input type="email" name="email" placeholder="Электронный адрес"></input>
+
+                    <label name="agree">
+                        <input type="checkbox" name="agree"> Я согласен c <a href="index.html">политикой обработки
+                        персональных
+                        данных.</a>
+                    </label>
+                    <button type="submit" class="btn">Получить ссылку</button>
+                </form>
+                <div class="info">Код подтверждения будет отправлен на указанный адрес</div>
+            </div>
+        </div>
+        <div class="popup email">
+            <div class="popup-block popup-email">
+                <div class="close">
+                    <img src="../img/close.png" alt="Закрыть">
+                </div>
+                <div class="title">Спасибо!</div>
+                <div class="subtitle">Ссылка для авторизации направлена вам на email:<br> ЕГО_ЕМАИЛ</div>
+                <div class="btn">Ок</div>
+            </div>
+
+        </div>
+        <div class="popup vote">
+            <div class="popup-block popup-email">
+                <div class="close">
+                    <img src="../img/close.png" alt="Закрыть">
+                </div>
+                <div class="title">Спасибо!</div>
+                <div class="subtitle">Ваш голос учтён</div>
+                <div class="btn">Ок</div>
+            </div>
+
+        </div>
     </div>
 </main>
 

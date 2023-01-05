@@ -673,3 +673,165 @@ footer {
   }
 }
 
+//Номинанты
+
+.nominee {
+  margin-top: 150px;
+  margin-bottom: 150px;
+  h1{
+    line-height: 1.1;
+    margin-bottom: 64px;
+  }
+  .nominee-items{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 26px;
+    .nominee-item{
+      cursor: pointer;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      .nominee-img {
+        object-fit: cover;
+        width: 513px;
+        height: 320px;
+
+        }
+      .nominee-search{
+        position: absolute;
+        top:20px;
+        right: 20px;
+      }
+      .nominee-person {
+        display: flex;
+        gap: 16px;
+        align-items: center;
+        .nominee-person-img{
+          height: 48px;
+          width: 48px;
+          border-radius: 100%;
+        }
+        .nominee-person-name{
+          color: @main-accent;
+          font-weight: 700;
+          font-size: 24px;
+          line-height: 37px;
+          letter-spacing: 0.5px;
+        }
+      }
+    }
+  }
+}
+
+//Авторизация
+
+.popup {
+  position: fixed;
+  top: 0;
+  right: 0;
+  background: rgba(25, 24, 29, 0.9);
+  height: 100vh;
+  width: 100vw;
+  a {
+    color: @main-accent;
+    text-decoration: underline;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  &.authorization {
+    display: none;
+  }
+  .close{
+    position: absolute;
+    right:20px;
+    top: 20px;
+    cursor: pointer;
+  }
+  .popup-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 64px 64px 80px 64px;
+    gap: 24px;
+    .title {
+      font-size: 50px;
+      line-height: 55px;
+      text-align: center;
+      font-weight: 700;
+      color: #19181D;
+    }
+    .subtitle {
+      color: #919095;
+      text-align: center;
+      font-size: 17px;
+      line-height: 26px;
+    }
+    .authorization-form{
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      label{
+        color: #5F5E63;
+        font-size: 17px;
+        line-height: 26px;
+      }
+      input[type=text]{
+        padding: 16px 8px 16px 20px;
+        font-size: 17px;
+        border: 1px solid rgba(25, 24, 29, 0.9);
+        margin-bottom: 20px;
+      }
+      input[type=email]{
+        padding: 16px 8px 16px 20px;
+        font-size: 17px;
+        border: 1px solid rgba(25, 24, 29, 0.9);
+        margin-bottom: 32px;
+      }
+      input::placeholder {
+        color: #919095;
+      }
+      input[type=checkbox]{
+      margin-bottom: 48px;
+      }
+      .btn {
+        align-self: center;
+        max-width: 290px;
+      }
+    }
+    .info{
+      font-size: 17px;
+      line-height: 26px;
+      text-align: center;
+      letter-spacing: 0.5px;
+      color: #919095;
+    }
+  }
+}
+
+//попап email
+.popup{
+  &.email{
+    display: none;
+  }
+  .btn{
+    align-self: center;
+  }
+}
+.popup{
+  &.vote{
+    display: none;
+  }
+  .popup-block{
+    width: 368px;
+  }
+  .btn{
+    align-self: center;
+  }
+}
