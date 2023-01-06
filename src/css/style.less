@@ -5,11 +5,11 @@ header {
   display: flex;
   justify-content: space-between;
   height: 80px;
-
+  flex-wrap: wrap;
   .logo {
     display: flex;
     align-items: center;
-
+    flex-wrap: wrap;
     img {
       width: 90px;
       height: 50px;
@@ -79,6 +79,7 @@ header {
 
   .img-about {
     img {
+
       height: 830px;
       width: 740px;
     }
@@ -133,16 +134,15 @@ header {
   .title-stages {
     display: flex;
     gap: 40px;
-    justify-content: center;
     margin-top: 50px;
     margin-bottom: 50px;
 
     h3 {
-      width: 920px;
+
     }
 
     .descriptions-stages {
-      width: 560px;
+
       font-size: 17px;
       line-height: 1.55;
       font-weight: 400;
@@ -211,17 +211,18 @@ header {
   .title-jury {
     display: flex;
     gap: 40px;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
     margin-top: 50px;
     margin-bottom: 50px;
 
     h3 {
-      width: 920px;
+
       font-size: 80px;
     }
 
     .descriptions-jury {
-      width: 560px;
+
       font-size: 17px;
       line-height: 1.55;
       font-weight: 400;
@@ -231,23 +232,26 @@ header {
   .jury-items {
     display: flex;
     gap: 30px;
-    justify-content: space-between;
+    justify-content: flex-start;
+    flex-wrap: wrap;
 
     .jury-item {
       display: flex;
       flex-direction: column;
-      gap: 20px;
-      width: 170px;
+      gap: 30px;
+
 
       .title {
         font-size: 17px;
         font-weight: 700;
         letter-spacing: 0.5px;
         color: @main-accent;
+        max-width: 170px;
       }
 
       .description {
         font-weight: 400;
+        max-width: 170px;
       }
 
       img {
@@ -323,16 +327,14 @@ header {
         margin-top: 50px;
         display: flex;
         justify-content: space-between;
-
+        flex-wrap: wrap;
         .title {
           font-size: 50px;
-          width: 400px;
           line-height: 1.1;
         }
 
         .description {
           font-size: 17px;
-          width: 650px;
         }
       }
     }
@@ -352,12 +354,12 @@ header {
     align-items: center;
 
     h3 {
-      width: 920px;
+
       font-size: 80px;
     }
 
     .descriptions-prizes {
-      width: 560px;
+
       font-size: 24px;
       line-height: 1.55;
       font-weight: 400;
@@ -369,7 +371,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-
+    flex-wrap: wrap;
     .numb {
       font-size: 70px;
       line-height: 47px;
@@ -382,7 +384,7 @@ header {
 
     .title {
       font-size: 22px;
-      width: 420px;
+
     }
 
     .price-wrapper {
@@ -414,13 +416,13 @@ header {
 
 
     h1 {
-      width: 920px;
+
       font-size: 80px;
       line-height: 1.1;
     }
 
     .descriptions-organizers {
-      width: 560px;
+
       font-size: 17px;
       line-height: 1.55;
       font-weight: 400;
@@ -430,6 +432,7 @@ header {
   .organizers-items {
     display: flex;
     justify-content: space-between;
+
   }
 }
 
@@ -453,7 +456,7 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
+    flex-wrap: wrap;
     h1 {
       font-size: 130px;
     }
@@ -475,7 +478,7 @@ footer {
     display: flex;
     justify-content: space-between;
     margin-bottom: 100px;
-
+    flex-wrap: wrap;
     .contacts-item {
       width: 290px;
 
@@ -491,7 +494,7 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-
+    flex-wrap: wrap;
     .title {
       font-weight: 700;
     }
@@ -686,6 +689,7 @@ footer {
     display: flex;
     flex-wrap: wrap;
     gap: 26px;
+    flex-wrap: wrap;
     .nominee-item{
       cursor: pointer;
       position: relative;

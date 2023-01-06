@@ -1,0 +1,168 @@
+@import "const";
+
+@media (max-width: 1400px) {
+  .container-min {
+    margin-right: 20px;
+    margin-left: 20px;
+  }
+
+  .container-middle {
+    margin-right: 20px;
+    margin-left: 20px;
+  }
+
+  .container {
+    margin-right: 20px;
+    margin-left: 20px;
+  }
+
+  .container-detail {
+    margin-right: 20px;
+    margin-left: 20px;
+  }
+
+  .about .about-info p {
+    max-width: none;
+    margin-bottom: 30px;
+  }
+  h1{
+    font-size: 60px;
+  }
+
+}
+
+@media (max-width: 1400px) {
+  //Шапка
+  header {
+    ul {
+      display: none;
+
+      li {
+        display: none;
+      }
+    }
+  }
+
+  //  о конкурсе
+  .about {
+    justify-content: flex-start;
+    gap: 0;
+
+    .img-about {
+      img {
+        display: none;
+      }
+    }
+
+    p {
+      max-width: none;
+    }
+
+  }
+
+  .stages {
+    margin-bottom: 150px;
+
+    .title-stages {
+      display: flex;
+      gap: 40px;
+      margin-top: 50px;
+      margin-bottom: 50px;
+      flex-wrap: wrap;
+
+      h3 {
+        width: 920px;
+      }
+
+      .descriptions-stages {
+        width: 560px;
+        font-size: 17px;
+        line-height: 1.55;
+        font-weight: 400;
+      }
+    }
+
+    //стадии
+    .numbs-stages {
+      flex-wrap: wrap;
+
+      .arrow {
+        display: none;
+      }
+    }
+  }
+
+  //Жюри
+  .jury {
+
+
+    .title-jury {
+      flex-wrap: wrap;
+      justify-content: flex-start;
+
+    }
+  }
+
+  //призы
+  .prizes {
+
+
+    .title-prizes {
+      gap: 0;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+
+
+    }
+  }
+
+  //Организаторы
+  .organizers {
+    .title-organizers {
+      flex-wrap: wrap;
+
+      h1 {
+        font-size: 60px;
+      }
+    }
+
+    .organizers-items {
+      flex-wrap: wrap;
+    }
+  }
+
+  footer {
+    .footer-wrapper {
+      flex-wrap: wrap;
+    }
+  }
+  //Цитата
+  .quote {
+    margin-bottom: 150px;
+
+    h1 {
+      line-height: 1.05;
+      margin-bottom: 150px;
+    }
+
+    .line {
+      margin-bottom: 50px;
+    }
+
+    .quote-items {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      .quote-name {
+        font-size: 50px;
+        color: @main-accent;
+      }
+
+      img {
+        width: 80px;
+        height: 70px;
+      }
+    }
+  }
+}
