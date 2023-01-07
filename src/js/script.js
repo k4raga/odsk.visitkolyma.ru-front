@@ -1,24 +1,28 @@
 window.addEventListener('DOMContentLoaded', (e) => {
     const BUTTONS_VOTE = document.querySelectorAll('.btn-vote')
     const POPUP_AUTHORIZATION = document.querySelector('.authorization')
-    // const CLOSE_BUTTON_AUTHORIZATION = POPUP_AUTHORIZATION.querySelector('.close')
+
 
 
     function togglePopup(el) {
         el.classList.toggle('active')
     }
+    if(POPUP_AUTHORIZATION) {
+        const CLOSE_BUTTON_AUTHORIZATION = POPUP_AUTHORIZATION.querySelector('.close')
+        // показываем авторизацию
+        for (let i = 0; i < BUTTONS_VOTE.length; i++) {
+            let button_vote = BUTTONS_VOTE[i]
+            button_vote.addEventListener('click', (e) => {
+                togglePopup(POPUP_AUTHORIZATION)
+            })
+        }
 
-    // показываем авторизацию
-    for (let i = 0; i < BUTTONS_VOTE.length; i++) {
-        let button_vote = BUTTONS_VOTE[i]
-        button_vote.addEventListener('click', (e) => {
+        CLOSE_BUTTON_AUTHORIZATION.addEventListener('click', (e) => {
             togglePopup(POPUP_AUTHORIZATION)
         })
     }
 
-    // CLOSE_BUTTON_AUTHORIZATION.addEventListener('click', (e) => {
-    //     togglePopup(POPUP_AUTHORIZATION)
-    // })
+
 
     function createCard(nomineeItemLink, nomineeImg, nomineePersonImg,nomineePersonName) {
         const NOMINEE_ITEMS = document.querySelector('.nominee-items')
@@ -59,9 +63,9 @@ window.addEventListener('DOMContentLoaded', (e) => {
     }
     createImg('img')
 
-    function createProfile(photoNominee, nameNominee, socialNominee, profession, genre, path, event) {
-        const ABOUt_NOMINEE = document.querySelector('.about-nominee')
-        if (ABOUt_NOMINEE) {
+    function createProfile(id, photoNominee, nameNominee, socialNominee, profession, genre, path, event) {
+        const ABOUT_NOMINEE = document.querySelector('.about-nominee')
+        if (ABOUT_NOMINEE) {
             const content = `
                     <div class="photographer-wrapper">
                 <div class="photographer">
@@ -97,10 +101,10 @@ window.addEventListener('DOMContentLoaded', (e) => {
                 </div>
             </div>
         `
-            GALLERY_NOMINEE.innerHTML += content
+            ABOUT_NOMINEE.innerHTML = content
         }
     }
-    createImg('img')
+    createProfile('img', 'Иван', 'ВК', 'Учитель', 'Свободный', 'Путь', 'Hfp ldf ')
 
 
 })
