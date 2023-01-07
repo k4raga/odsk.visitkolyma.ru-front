@@ -2,7 +2,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
     const BUTTONS_VOTE = document.querySelectorAll('.btn-vote')
     const POPUP_AUTHORIZATION = document.querySelector('.authorization')
     // const CLOSE_BUTTON_AUTHORIZATION = POPUP_AUTHORIZATION.querySelector('.close')
-    const NOMINEE_ITEMS = document.querySelector('.nominee-items')
+
 
     function togglePopup(el) {
         el.classList.toggle('active')
@@ -21,7 +21,9 @@ window.addEventListener('DOMContentLoaded', (e) => {
     // })
 
     function createCard(nomineeItemLink, nomineeImg, nomineePersonImg,nomineePersonName) {
-        const content = `
+        const NOMINEE_ITEMS = document.querySelector('.nominee-items')
+        if (NOMINEE_ITEMS) {
+            const content = `
         <div class="nominee-item">
             <a class='nominee-item-link' href="${nomineeItemLink}">
                 <div class="nominee-photo">
@@ -36,8 +38,71 @@ window.addEventListener('DOMContentLoaded', (e) => {
         </div>
          
   `;
-        NOMINEE_ITEMS.innerHTML += content
+            NOMINEE_ITEMS.innerHTML += content
+
+        }
+
     }
     createCard('link', 'img', 'img2', 'Иван')
 
+
+    function createImg(imgUrl) {
+        const GALLERY_NOMINEE = document.querySelector('.gallery-nominee')
+        if (GALLERY_NOMINEE) {
+            const content = `
+                    <div class="photo-item">
+                <img src="${imgUrl}" alt="Фото на конкурс">
+            </div>
+        `
+            GALLERY_NOMINEE.innerHTML += content
+        }
+    }
+    createImg('img')
+
+    function createProfile(photoNominee, nameNominee, socialNominee, profession, genre, path, event) {
+        const ABOUt_NOMINEE = document.querySelector('.about-nominee')
+        if (ABOUt_NOMINEE) {
+            const content = `
+                    <div class="photographer-wrapper">
+                <div class="photographer">
+                    <div class="photo-nominee">
+                        <img src="${photoNominee}" alt="Фото участника"></div>
+                    <div class="name-nominee">${nameNominee}</div>
+                    <div class="social-nominee">
+                        <img src="${socialNominee}" alt="вк">
+                    </div>
+                </div>
+                <div class="btn btn-vote">Проголосовать</div>
+            </div>
+            <div class="wrapper-details">
+                <div class="profession">
+                    <div class="title">Профессия:</div>
+                    <div class="description">${profession}</div>
+                </div>
+                <div class="genre">
+                    <div class="title">Основной жанр фотографии:</div>
+                    <div class="description">${genre}</div>
+                </div>
+            </div>
+            <div class="more-info">
+                <div class="path">
+                    <div class="title">Путь, становление, развитие в фотографии:</div>
+                    <div class="description">${path}</div>
+                </div>
+                <div class="event">
+                    <div class="title">Самое запоминающееся фотоприключение в Магаданской области:
+                    </div>
+                    <div class="description">${event}
+                    </div>
+                </div>
+            </div>
+        `
+            GALLERY_NOMINEE.innerHTML += content
+        }
+    }
+    createImg('img')
+
+
 })
+
+
