@@ -49,7 +49,7 @@ module.exports = {
             },
         }),
         new MiniCssExtractPlugin({
-            filename: TemplatePath + "styles.css",
+            filename: TemplatePath + "template_styles.css",
         })
     ],
     module: {
