@@ -1,0 +1,342 @@
+@import "const";
+
+.wrapper {
+  margin-top: 64px;
+  margin-bottom: 128px;
+  background-color: white;
+  .back{
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 36px;
+    letter-spacing: 0.5px;
+    color: #919095;
+    margin-bottom: 36px;
+    img{
+      width: 12px;
+      height: 36px
+    }
+  }
+  .more-wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .previous{
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 36px;
+      letter-spacing: 0.5px;
+      color: #919095;
+      margin-bottom: 36px;
+      img{
+        width: 12px;
+        height: 36px
+      }
+    }
+    .next{
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 36px;
+      letter-spacing: 0.5px;
+      color: #919095;
+      margin-bottom: 36px;
+      img{
+        transform: rotate(180deg);
+        width: 12px;
+        height: 36px
+      }
+    }
+  }
+}
+
+.about-nominee {
+  display: flex;
+  gap: 32px;
+  flex-direction: column;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 26px;
+  letter-spacing: 0.5px;
+  color: #5F5E63;
+  margin-bottom: 48px;
+  flex-wrap: wrap;
+  .photographer-wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    .btn{
+      height: 30px;
+    }
+    .photographer {
+      display: flex;
+      gap: 32px;
+      align-items: center;
+
+      .photo-nominee {
+        img {
+          width: 100px;
+          height: 100px;
+        }
+      }
+
+      .name-nominee {
+        color: #19181D;
+        font-weight: 700;
+        font-size: 50px;
+        line-height: 55px;
+      }
+
+      .social-nominee {
+        img {
+          width: 44px;
+          height: 44px;
+        }
+      }
+    }
+  }
+
+
+  .wrapper-details {
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+    .profession {
+      display: flex;
+      gap: 6px;
+
+      .description {
+        color: #19181d;
+      }
+    }
+    .genre {
+      display: flex;
+      gap: 6px;
+
+      .description {
+        color: #19181d;
+      }
+    }
+  }
+  .more-info{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    max-width: 766px;
+    .path{
+      display: flex;
+      flex-direction: column;
+      gap:24px;
+      .title{
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 31px;
+        letter-spacing: 0.5px;
+        color: #19181D;
+      }
+    }
+    .event{
+      display: flex;
+      flex-direction: column;
+      gap:24px;
+      .title{
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 31px;
+        letter-spacing: 0.5px;
+        color: #19181D;
+      }
+    }
+  }
+
+}
+//Галлерея
+.gallery-nominee{
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-bottom: 48px;
+  .photo-item{
+    img{
+      object-fit: cover;
+
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+//Номинанты
+
+.nominee {
+  margin-top: 150px;
+  margin-bottom: 150px;
+  h1{
+    line-height: 1.1;
+    margin-bottom: 64px;
+  }
+  .nominee-items{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 26px;
+    .nominee-item{
+      cursor: pointer;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      .nominee-img {
+
+        object-fit: cover;
+        width: 568px;
+        height: 332px;
+
+      }
+      .nominee-search{
+        position: absolute;
+        top:20px;
+        right: 20px;
+      }
+      .nominee-person {
+        display: flex;
+        gap: 16px;
+        align-items: center;
+        .nominee-person-img{
+          height: 48px;
+          width: 48px;
+          border-radius: 100%;
+        }
+        .nominee-person-name{
+          color: @main-accent;
+          font-weight: 700;
+          font-size: 24px;
+          line-height: 37px;
+          letter-spacing: 0.5px;
+        }
+      }
+    }
+  }
+}
+
+//Авторизация
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background: rgba(25, 24, 29, 0.9);
+  height: 100vh;
+  width: 100vw;
+  a {
+    color: @main-accent;
+    text-decoration: underline;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  &.active {
+    display: block;
+  }
+  .close{
+    position: absolute;
+    right:20px;
+    top: 20px;
+    cursor: pointer;
+  }
+  .popup-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 64px 64px 80px 64px;
+    gap: 24px;
+    .title {
+      font-size: 50px;
+      line-height: 55px;
+      text-align: center;
+      font-weight: 700;
+      color: #19181D;
+    }
+    .subtitle {
+      color: #919095;
+      text-align: center;
+      font-size: 17px;
+      line-height: 26px;
+    }
+    .authorization-form{
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      label{
+        color: #5F5E63;
+        font-size: 17px;
+        line-height: 26px;
+      }
+      input[type=text]{
+        padding: 16px 8px 16px 20px;
+        font-size: 17px;
+        border: 1px solid rgba(25, 24, 29, 0.9);
+        margin-bottom: 20px;
+      }
+      input[type=email]{
+        padding: 16px 8px 16px 20px;
+        font-size: 17px;
+        border: 1px solid rgba(25, 24, 29, 0.9);
+        margin-bottom: 32px;
+      }
+      input::placeholder {
+        color: #919095;
+      }
+      input[type=checkbox]{
+        margin-bottom: 48px;
+      }
+      .btn {
+        align-self: center;
+        max-width: 290px;
+      }
+    }
+    .info{
+      font-size: 17px;
+      line-height: 26px;
+      text-align: center;
+      letter-spacing: 0.5px;
+      color: #919095;
+    }
+  }
+}
+
+//попап email
+.popup{
+  &.email{
+    display: none;
+  }
+  .btn{
+    align-self: center;
+  }
+}
+.popup{
+  &.vote{
+    display: none;
+  }
+  .popup-block{
+    width: 368px;
+  }
+  .btn{
+    align-self: center;
+  }
+}

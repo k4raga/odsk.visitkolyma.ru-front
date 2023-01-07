@@ -25,7 +25,8 @@
     max-width: none;
     margin-bottom: 30px;
   }
-  h1{
+
+  h1 {
     font-size: 60px;
   }
 
@@ -47,6 +48,7 @@
   .about {
     justify-content: flex-start;
     gap: 0;
+    height: 600px;
 
     .img-about {
       img {
@@ -87,7 +89,10 @@
       flex-wrap: wrap;
 
       .arrow {
-        display: none;
+      }
+
+      .item-stages {
+        max-width: 300px;
       }
     }
   }
@@ -136,6 +141,7 @@
       flex-wrap: wrap;
     }
   }
+
   //Цитата
   .quote {
     margin-bottom: 150px;
@@ -154,6 +160,7 @@
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
+
       .quote-name {
         font-size: 50px;
         color: @main-accent;
@@ -164,5 +171,860 @@
         height: 70px;
       }
     }
+  }
+
+  //Номинации
+  .nomination {
+
+
+    h2 {
+
+    }
+
+    .nomination-list {
+
+      .nomination-item {
+
+
+        .nomination-wrapper {
+
+          .title {
+            max-width: 600px;
+          }
+
+          .description {
+
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1400px) {
+  //Этапы
+  .stages {
+    margin-bottom: 150px;
+
+    .title-stages {
+      display: flex;
+      gap: 40px;
+      margin-top: 50px;
+      margin-bottom: 50px;
+
+      h3 {
+
+      }
+
+      .descriptions-stages {
+
+        font-size: 17px;
+        line-height: 1.55;
+        font-weight: 400;
+      }
+    }
+
+    .numbs-stages {
+
+
+      .item-stages {
+        max-width: 250px;
+
+        &:hover {
+          .back {
+
+          }
+        }
+
+        .back {
+
+
+          img {
+
+
+          }
+        }
+
+        .num {
+
+        }
+
+        .title {
+
+        }
+
+        .description {
+
+        }
+
+        .arrow {
+
+        }
+      }
+    }
+  }
+
+  //Жюри
+  .jury {
+    .title-jury {
+
+      h3 {
+      }
+
+      .descriptions-jury {
+      }
+    }
+
+    .jury-items {
+
+      .jury-item {
+        max-width: 160px;
+
+        .title {
+        }
+
+        .description {
+        }
+
+        img {
+          &:hover {
+          }
+        }
+      }
+    }
+  }
+
+
+
+
+}
+
+@media (max-width: 992px) {
+  .nominee {
+
+    h1 {
+
+    }
+
+    .nominee-items {
+
+      .nominee-item {
+
+        .nominee-img {
+          width: 300px;
+          height: 168px;
+        }
+
+        .nominee-search {
+
+        }
+
+        .nominee-person {
+          margin-top: 10px;
+
+          .nominee-person-img {
+            width: 40px;
+            height: 40px;
+          }
+
+          .nominee-person-name {
+            font-size: 17px;
+          }
+        }
+      }
+    }
+  }
+
+  // Стадии
+  .stages {
+    margin-bottom: 150px;
+
+    .title-stages {
+      display: flex;
+      gap: 40px;
+      margin-top: 50px;
+      margin-bottom: 50px;
+
+      h3 {
+
+      }
+
+      .descriptions-stages {
+
+        font-size: 17px;
+        line-height: 1.55;
+        font-weight: 400;
+      }
+    }
+
+    .numbs-stages {
+
+
+      .item-stages {
+        width: 200px;
+
+        &:hover {
+          .back {
+          }
+        }
+
+        .back {
+          img {
+          }
+        }
+
+        .num {
+        }
+
+        .title {
+        }
+
+        .description {
+        }
+
+        .arrow {
+        }
+      }
+    }
+  }
+
+  //Жюри
+  .jury {
+    .title-jury {
+
+      h3 {
+      }
+
+      .descriptions-jury {
+      }
+    }
+
+    .jury-items {
+      gap: 50px;
+      justify-content: flex-start;
+
+      .jury-item {
+        max-width: 250px;
+
+        .title {
+        }
+
+        .description {
+        }
+
+        img {
+          &:hover {
+          }
+        }
+      }
+    }
+  }
+
+  .prizes {
+    margin-bottom: 50px;
+
+    .title-prizes {
+      display: flex;
+      gap: 40px;
+      justify-content: flex-start;
+      margin-top: 50px;
+      margin-bottom: 50px;
+      align-items: center;
+
+      h3 {
+
+        font-size: 80px;
+      }
+
+      .descriptions-prizes {
+
+        font-size: 24px;
+        line-height: 1.55;
+        font-weight: 400;
+      }
+    }
+
+    .prizes-wrapper {
+      margin-top: 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+
+      .numb {
+
+
+        span {
+
+        }
+      }
+
+      .title {
+
+      }
+
+      .price-wrapper {
+        .price {
+
+        }
+
+        .description {
+
+        }
+      }
+    }
+  }
+  .gallery-nominee{
+
+    .photo-item{
+      img{
+        object-fit: cover;
+        max-width: 1162px;
+        width: 100%;
+      }
+    }
+  }
+
+
+}
+
+
+@media (max-width: 768px) {
+  .stages {
+    margin-bottom: 150px;
+
+    .title-stages {
+      display: flex;
+      gap: 40px;
+      margin-top: 50px;
+      margin-bottom: 50px;
+
+      h3 {
+
+      }
+
+      .descriptions-stages {
+
+        font-size: 17px;
+        line-height: 1.55;
+        font-weight: 400;
+      }
+    }
+
+    .numbs-stages {
+
+
+      .item-stages {
+        width: 220px;
+
+        &:hover {
+          .back {
+          }
+        }
+
+        .back {
+          img {
+          }
+        }
+
+        .num {
+        }
+
+        .title {
+        }
+
+        .description {
+        }
+
+        .arrow {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .gallery {
+
+
+    .gallery-items {
+
+      img {
+        object-fit: cover;
+        width: 100%;
+      }
+    }
+  }
+
+  .prizes {
+    margin-bottom: 50px;
+
+    .title-prizes {
+      display: flex;
+      gap: 40px;
+      justify-content: flex-start;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      align-items: center;
+
+      h3 {
+
+        font-size: 60px;
+      }
+
+      .descriptions-prizes {
+
+
+      }
+    }
+
+    .prizes-wrapper {
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+
+      .numb {
+        font-size: 60px;
+        width: 400px;
+
+        span {
+
+        }
+      }
+
+      .title {
+
+      }
+
+      .price-wrapper {
+        .price {
+          font-size: 60px;
+        }
+
+        .description {
+
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  footer {
+    .footer-wrapper {
+      h1 {
+        font-size: 70px;
+      }
+
+      img {
+      }
+    }
+
+    .footer-email {
+    }
+
+    .contacts-items {
+      .contacts-item {
+        .line {
+
+        }
+      }
+    }
+  }
+
+  .about {
+    height: 720px;
+
+    .img-about {
+      img {
+      }
+    }
+
+    .about-info {
+      .logo {
+        img {
+        }
+      }
+
+      h2 {
+      }
+
+      p {
+      }
+
+      :nth-child(5) {
+      }
+
+      .link {
+        &:hover {
+        }
+      }
+    }
+  }
+
+  .nominee {
+    h1 {
+    }
+
+    .nominee-items {
+      .nominee-item {
+        .nominee-img {
+          width: 254px;
+          height: 160px;
+        }
+
+        .nominee-search {
+        }
+
+        .nominee-person {
+          .nominee-person-img {
+          }
+
+          .nominee-person-name {
+          }
+        }
+      }
+    }
+  }
+
+  .nomination {
+    h2 {
+      font-size: 62px;
+    }
+
+    .nomination-list {
+
+      .nomination-item {
+
+
+        .nomination-wrapper {
+
+          .title {
+            font-size: 30px;
+            max-width: 200px;
+          }
+
+          .description {
+            font-size: 14px;
+            max-width: 200px;
+          }
+        }
+      }
+    }
+  }
+
+  .prizes {
+
+
+    .title-prizes {
+
+
+      h3 {
+        font-size: 80px;
+      }
+
+      .descriptions-prizes {
+
+      }
+    }
+
+    .prizes-wrapper {
+      justify-content: center;
+      gap: 30px;
+
+      .numb {
+        text-align: center;
+
+        span {
+          text-align: center;
+        }
+      }
+
+      .title {
+        text-align: center;
+        text-align: center;
+      }
+
+      .price-wrapper {
+        .price {
+          text-align: center;
+
+        }
+
+        .description {
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  footer {
+    .footer-wrapper {
+
+
+      h1 {
+
+      }
+
+      img {
+
+      }
+    }
+
+    .footer-email {
+
+    }
+
+    .contacts-items {
+
+      justify-content: center;
+
+      .contacts-item {
+        width: 600px;
+
+        .line {
+
+        }
+      }
+    }
+
+    .tur-magadan {
+
+      .title {
+
+      }
+    }
+  }
+}
+
+@media (max-width: 360px) {
+  h1 {
+    font-size: 30px;
+  }
+
+  h2 {
+    font-size: 30px;
+  }
+
+  h3 {
+    font-size: 30px;
+  }
+
+  .nomination h2 {
+    font-size: 30px;
+  }
+
+  .prizes .title-prizes h3 {
+    font-size: 30px;
+  }
+
+  .organizers .title-organizers h1 {
+    font-size: 30px;
+  }
+
+  footer .footer-wrapper h1 {
+    font-size: 30px;
+  }
+
+
+  .about {
+    height: 700px;
+
+
+    p {
+      font-size: 15px;
+    }
+
+    .link {
+
+      font-size: 17px;
+
+
+    }
+  }
+
+  .nominee {;
+
+    h1 {
+
+    }
+
+    .nominee-items {
+
+      .nominee-item {
+
+        .nominee-img {
+          object-fit: cover;
+          width: 320px;
+          height: 200px;
+        }
+
+      }
+    }
+  }
+
+  .jury {
+    margin-bottom: 100px;
+
+    .title-jury {
+      display: flex;
+      gap: 40px;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 50px;
+      margin-bottom: 50px;
+
+      h3 {
+        font-size: 80px;
+      }
+
+      .descriptions-jury {
+        font-size: 17px;
+        line-height: 1.55;
+        font-weight: 400;
+      }
+    }
+
+    .jury-items {
+      display: flex;
+      gap: 30px;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+
+      .jury-item {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+
+
+        .title {
+          font-size: 17px;
+          font-weight: 700;
+          letter-spacing: 0.5px;
+          color: @main-accent;
+          width: 320px;
+        }
+
+        .description {
+          font-weight: 400;
+          width: 320px;
+          max-width: 320px;
+        }
+
+        img {
+          -webkit-filter: grayscale(100%);
+          height: 420px;
+          width: 320px;
+
+          &:hover {
+            -webkit-filter: grayscale(0%);
+          }
+        }
+
+      }
+    }
+  }
+
+  .quote {
+    margin-bottom: 150px;
+
+    h1 {
+      line-height: 1.05;
+      margin-bottom: 50px;
+    }
+
+    .line {
+      margin-bottom: 50px;
+    }
+
+    .quote-items {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .quote-name {
+        font-size: 30px;
+        color: @main-accent;
+        margin-bottom: 20px;
+      }
+
+      img {
+        display: none;
+        width: 80px;
+        height: 70px;
+      }
+    }
+  }
+
+  .nomination {
+
+    h2 {
+
+    }
+
+    .nomination-list {
+      .nomination-item {
+        .nomination-wrapper {
+          flex-wrap: wrap;
+
+          .title {
+            font-size: 28px;
+            margin-bottom: 20px;
+          }
+
+          .description {
+            font-size: 15px;
+            max-width: 340px;
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 680px) {
+  footer .footer-wrapper h1 {
+    font-size: 80px;
+  }
+
+
+}
+@media (max-width: 954px) {
+  .more-wrapper {
+    .btn {
+      display: none;
+    }
+  }
+  .about-nominee .photographer-wrapper .btn {
+    height: 30px;
+    position: fixed;
+    bottom: 50px;
+    top:90%;
+    left:50%;
+    transform:translate(-50%, -50%);
+  }
+}
+@media (max-width: 472px) {
+  .about-nominee .photographer-wrapper .photographer .name-nominee {
+    color: #19181D;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 35px;
+  }
+  footer .footer-wrapper h1 {
+    font-size: 30px;
+  }
+  .wrapper .more-wrapper .next {
+
+    font-size: 14px;
+
+  }
+  .wrapper .more-wrapper .previous {
+
+    font-size: 14px;
+
+  }
+  .about-nominee .photographer-wrapper .photographer {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+    flex-wrap: wrap;
   }
 }
