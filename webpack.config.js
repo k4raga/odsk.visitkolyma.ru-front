@@ -31,9 +31,14 @@ module.exports = {
         new HtmlWebpackPlugin({
             filename: path.resolve(__dirname, SitePath, mode === 'production' ? 'index.php' : 'index.html'),
             template: path.resolve(__dirname, 'src/html', 'index.html'),
-            minimize: {
-                removeComments: false,
+            minify: {
                 collapseWhitespace: false,
+                keepClosingSlash: false,
+                removeComments: false,
+                removeRedundantAttributes: false,
+                removeScriptTypeAttributes: false,
+                removeStyleLinkTypeAttributes: false,
+                useShortDoctype: false
             },
         }),
         // new HtmlWebpackPlugin({
@@ -43,9 +48,14 @@ module.exports = {
         new HtmlWebpackPlugin({
             filename: path.resolve(__dirname, SitePath, 'detail', mode === 'production' ? 'index.php' : 'index.html'),
             template: path.resolve(__dirname, 'src/html', 'detail.html'),
-            minimize: {
-                removeComments: false,
+            minify: {
                 collapseWhitespace: false,
+                keepClosingSlash: false,
+                removeComments: false,
+                removeRedundantAttributes: false,
+                removeScriptTypeAttributes: false,
+                removeStyleLinkTypeAttributes: false,
+                useShortDoctype: false
             },
         }),
         new MiniCssExtractPlugin({

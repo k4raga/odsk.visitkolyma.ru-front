@@ -34,63 +34,18 @@
 
             </div>
         </a>
-        <section class="about-nominee">
-            <div class="photographer-wrapper">
-                <div class="photographer">
-                    <div class="photo-nominee">
-                        <img src="../img/nominee-foto.png" alt="Фото участника"></div>
-                    <div class="name-nominee">Андрей Шишокин</div>
-                    <div class="social-nominee">
-                        <img src="../img/social_media_buttons.png" alt="вк">
-                    </div>
-                </div>
-                <div class="btn btn-vote">Проголосовать</div>
-            </div>
-            <div class="wrapper-details">
-                <div class="profession">
-                    <div class="title">Профессия:</div>
-                    <div class="description">Фотограф</div>
-                </div>
-                <div class="genre">
-                    <div class="title">Основной жанр фотографии:</div>
-                    <div class="description">Репортаж</div>
-                </div>
-            </div>
-            <div class="more-info">
-                <div class="path">
-                    <div class="title">Путь, становление, развитие в фотографии:</div>
-                    <div class="description">Снимал друзей на экшн – камеру и тут понеслось.</div>
-                </div>
-                <div class="event">
-                    <div class="title">Самое запоминающееся фотоприключение в Магаданской области:
-                    </div>
-                    <div class="description">Однажды на сьёмке соревнований мотокросса, в меня прилетел мотоцикл, тогда
-                        я понял, что у меня хорошая реакция, такой фотоопыт я не забуду!
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="gallery-nominee">
-            <div class="photo-item">
-                <img src="../img/detail1.png" alt="">
-            </div>
-            <div class="photo-item">
-                <img src="../img/detail2.png" alt="">
-            </div>
-            <div class="photo-item">
-                <img src="../img/detail3.png" alt="">
-            </div>
-
-        </section>
+        <section class="about-nominee"></section>
+        <section class="gallery-nominee"></section>
         <div class="more-wrapper">
-            <div class="previous">
-                <img src="../img/arror_details.png" alt="">
-                Предыдущий
-            </div>
+<!--            <div class="previous">-->
+<!--                <img src="../img/arror_details.png" alt="">-->
+<!--                Предыдущий-->
+<!--            </div>-->
             <div class="btn btn-vote">Проголосовать</div>
-            <div class="next">
-                Следующий
-                <img src="../img/arror_details.png" alt=""></div>
+<!--            <div class="next">-->
+<!--                Следующий-->
+<!--                <img src="../img/arror_details.png" alt="">-->
+<!--            </div>-->
         </div>
         <div class="popup authorization">
 
@@ -103,15 +58,12 @@
                     после этого вы сможете проголосовать
                 </div>
                 <form class="authorization-form" action="">
-
-                    <label name="FIO">ФИО</label>
-                    <input type="text" name="FIO" placeholder="Ваше ФИО"></input>
-
-                    <label name="email">Электронный адрес</label>
-                    <input type="email" name="email" placeholder="Электронный адрес"></input>
-
-                    <label name="agree">
-                        <input type="checkbox" name="agree"> Я согласен c <a href="index.html">политикой обработки
+                    <label for="fio">ФИО</label>
+                    <input type="text" name="fio" id="fio" placeholder="Ваше ФИО" required>
+                    <label for="email">Электронный адрес</label>
+                    <input type="email" name="email" id="email" placeholder="Электронный адрес" required>
+                    <label>
+                        <input type="checkbox" name="agree" required> Я согласен c <a href="index.html">политикой обработки
                         персональных
                         данных.</a>
                     </label>

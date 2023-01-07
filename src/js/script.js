@@ -1,30 +1,5 @@
 window.addEventListener('DOMContentLoaded', (e) => {
-    const BUTTONS_VOTE = document.querySelectorAll('.btn-vote')
-    const POPUP_AUTHORIZATION = document.querySelector('.authorization')
-
-
-
-    function togglePopup(el) {
-        el.classList.toggle('active')
-    }
-    if(POPUP_AUTHORIZATION) {
-        const CLOSE_BUTTON_AUTHORIZATION = POPUP_AUTHORIZATION.querySelector('.close')
-        // показываем авторизацию
-        for (let i = 0; i < BUTTONS_VOTE.length; i++) {
-            let button_vote = BUTTONS_VOTE[i]
-            button_vote.addEventListener('click', (e) => {
-                togglePopup(POPUP_AUTHORIZATION)
-            })
-        }
-
-        CLOSE_BUTTON_AUTHORIZATION.addEventListener('click', (e) => {
-            togglePopup(POPUP_AUTHORIZATION)
-        })
-    }
-
-
-
-    function createCard(nomineeItemLink, nomineeImg, nomineePersonImg,nomineePersonName) {
+    function createCard(nomineeItemLink, nomineeImg, nomineePersonImg, nomineePersonName) {
         const NOMINEE_ITEMS = document.querySelector('.nominee-items')
         if (NOMINEE_ITEMS) {
             const content = `
@@ -32,7 +7,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
             <a class='nominee-item-link' href="${nomineeItemLink}">
                 <div class="nominee-photo">
                     <img class="nominee-img" src="${nomineeImg}" alt="фото участника">
-                    <img class="nominee-search" src="../img/nominee-search.png" alt="подробнее">
+                    <img class="nominee-search" src="/local/templates/visitkolyma/assets/nominee-search.png" alt="подробнее">
                 </div>
                 <div class="nominee-person">
                     <img class="nominee-person-img" src="${nomineePersonImg}" alt="Фото участника">
@@ -47,7 +22,6 @@ window.addEventListener('DOMContentLoaded', (e) => {
         }
 
     }
-    createCard('link', 'img', 'img2', 'Иван')
 
 
     function createImg(imgUrl) {
@@ -61,7 +35,6 @@ window.addEventListener('DOMContentLoaded', (e) => {
             GALLERY_NOMINEE.innerHTML += content
         }
     }
-    createImg('img')
 
     function createProfile(id, photoNominee, nameNominee, socialNominee, profession, genre, path, event) {
         const ABOUT_NOMINEE = document.querySelector('.about-nominee')
@@ -73,7 +46,9 @@ window.addEventListener('DOMContentLoaded', (e) => {
                         <img src="${photoNominee}" alt="Фото участника"></div>
                     <div class="name-nominee">${nameNominee}</div>
                     <div class="social-nominee">
-                        <img src="${socialNominee}" alt="вк">
+                        <a href="${socialNominee}" target="_blank" id="social-link">
+                            <img src="/local/templates/visitkolyma/assets/social_media_buttons.png" alt="вк">
+                        </a>
                     </div>
                 </div>
                 <div class="btn btn-vote">Проголосовать</div>
@@ -104,8 +79,120 @@ window.addEventListener('DOMContentLoaded', (e) => {
             ABOUT_NOMINEE.innerHTML = content
         }
     }
-    createProfile('img', 'Иван', 'ВК', 'Учитель', 'Свободный', 'Путь', 'Hfp ldf ')
 
+    function togglePopup(el) {
+        el.classList.toggle('active')
+    }
+
+    // AJAX list
+    const NOMINEE_ITEMS = document.querySelector('.nominee-items'),
+        NOMINEE_WRAPPER = document.querySelector('.nominee')
+    if (NOMINEE_ITEMS) {
+        fetch('/api/contest/participant/list/')
+            .then((response) => {
+                return response.json()
+            })
+            .then((response) => {
+                if (response.status) {
+                    for (const el of response.data) {
+                        createCard(`/detail/?id=${el.id}`, el.image, el.avatar, el.fio)
+                    }
+                } else {
+                    NOMINEE_WRAPPER.classList.add('hidden')
+                }
+            })
+    }
+
+    // AJAX detail
+    const ABOUT_NOMINEE = document.querySelector('.about-nominee')
+    if (ABOUT_NOMINEE) {
+        let urlParams = new URLSearchParams(window.location.search),
+            id = urlParams.get('id')
+
+        if (!id) {
+            window.location.href = "/"
+        }
+
+        fetch(`/api/contest/participant/detail/?id=${id}`)
+            .then((response) => {
+                return response.json()
+            })
+            .then((response) => {
+                if (response.status) {
+                    createProfile(
+                        response.data.id,
+                        response.data.avatar,
+                        response.data.fio,
+                        response.data.socials.VK,
+                        response.data.profession,
+                        response.data.main_genre,
+                        response.data.path_photography_text,
+                        response.data.most_memorable_text,
+                    )
+                    //hidden VK if not exists
+                    if (!response.data.socials.VK) {
+                        document.querySelector('.social-link').classList.add('hidden')
+                    }
+
+                    //create images library
+                    for (const img of response.data.images) {
+                        createImg(img)
+                    }
+
+                    //event show popup
+                    const BUTTONS_VOTE = document.querySelectorAll('.btn-vote'),
+                        POPUP_AUTHORIZATION = document.querySelector('.authorization')
+
+                    if (POPUP_AUTHORIZATION) {
+                        const CLOSE_BUTTON_AUTHORIZATION = POPUP_AUTHORIZATION.querySelector('.close')
+                        // показываем авторизацию
+                        for (let i = 0; i < BUTTONS_VOTE.length; i++) {
+                            let button_vote = BUTTONS_VOTE[i]
+                            button_vote.addEventListener('click', (e) => {
+                                togglePopup(POPUP_AUTHORIZATION)
+                            })
+                        }
+
+                        CLOSE_BUTTON_AUTHORIZATION.addEventListener('click', (e) => {
+                            togglePopup(POPUP_AUTHORIZATION)
+                        })
+                    }
+
+                } else {
+                    window.location.href = "/"
+                }
+            })
+
+        // AJAX signup
+        const SIGNUP_FORM = document.querySelector('.authorization-form')
+        if (SIGNUP_FORM) {
+            SIGNUP_FORM.addEventListener('submit', (e) => {
+                e.preventDefault()
+                let formData = new FormData(SIGNUP_FORM)
+
+                let urlParams = new URLSearchParams(window.location.search),
+                    id = urlParams.get('id')
+
+                formData.append('id', id)
+
+                fetch('/api/contest/voting/sign_up/', {
+                    method: 'POST',
+                    body: formData
+                })
+                    .then((response) => {
+                        return response.json()
+                    })
+                    .then((response) => {
+                        if(response.status){
+                            let popupEmail = document.querySelector('.email')
+                            togglePopup(SIGNUP_FORM)
+                            togglePopup(popupEmail)
+                        }
+                    })
+            })
+        }
+
+    }
 
 })
 
