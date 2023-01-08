@@ -30,6 +30,7 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
+            meta: {viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no'},
             filename: path.resolve(__dirname, SitePath, mode === 'production' ? 'index.php' : 'index.html'),
             template: path.resolve(__dirname, 'src/html', 'index.html'),
             minify: {

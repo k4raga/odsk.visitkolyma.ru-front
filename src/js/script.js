@@ -22,6 +22,45 @@ window.addEventListener('DOMContentLoaded', (e) => {
         }
 
     }
+    function createSocial(tagName, tagLink) {
+        const SOCIAL_NOMINEE = document.querySelector('.social-nominee')
+        if(ABOUT_NOMINEE) {
+            switch (tagName) {
+                case'VK':
+                    const content = `
+                    <a href="${tagLink}" target="_blank" id="social-link">
+                            <img src="/local/templates/visitkolyma/assets/social_vk.png" alt="вк">
+                        </a>
+        `
+                SOCIAL_NOMINEE.innerHTML = content
+                break;
+            }
+            switch (tagName) {
+                case'INSTAGRAM':
+                    const content = `
+                    <a href="${tagLink}" target="_blank" id="social-link">
+                            <img src="/local/templates/visitkolyma/assets/social_vk.png" alt="Инстаграм">
+                        </a>
+        `
+                    SOCIAL_NOMINEE.innerHTML = content
+                    break;
+            }
+            switch (tagName) {
+                case'PINTEREST':
+                    const content = `
+                    <a href="${tagLink}" target="_blank" id="social-link">
+                            <img src="/local/templates/visitkolyma/assets/social_pinterest.png" alt="Пинтерест">
+                        </a>
+        `
+                    SOCIAL_NOMINEE.innerHTML = content
+                    break;
+            }
+            switch (tagName) {
+                case'':
+                    break;
+            }
+        }
+    }
 
 
     function createImg(imgUrl) {
@@ -36,7 +75,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
         }
     }
 
-    function createProfile(id, photoNominee, nameNominee, socialNominee, profession, genre, path, event) {
+    function createProfile(id, photoNominee, nameNominee, profession, genre, path, event) {
         const ABOUT_NOMINEE = document.querySelector('.about-nominee')
         if (ABOUT_NOMINEE) {
             const content = `
@@ -46,9 +85,6 @@ window.addEventListener('DOMContentLoaded', (e) => {
                         <img src="${photoNominee}" alt="Фото участника"></div>
                     <div class="name-nominee">${nameNominee}</div>
                     <div class="social-nominee">
-                        <a href="${socialNominee}" target="_blank" id="social-link">
-                            <img src="/local/templates/visitkolyma/assets/social_media_buttons.png" alt="вк">
-                        </a>
                     </div>
                 </div>
                 <div class="btn btn-vote">Проголосовать</div>
@@ -123,16 +159,17 @@ window.addEventListener('DOMContentLoaded', (e) => {
                         response.data.id,
                         response.data.avatar,
                         response.data.fio,
-                        response.data.socials.VK,
                         response.data.profession,
                         response.data.main_genre,
                         response.data.path_photography_text,
                         response.data.most_memorable_text,
                     )
+
+
                     //hidden VK if not exists
-                    if (!response.data.socials.VK) {
-                        document.querySelector('.social-link').classList.add('hidden')
-                    }
+                    // if (!response.data.socials.VK) {
+                    //     document.querySelector('.social-link').classList.add('hidden')
+                    // }
 
                     //create images library
                     for (const img of response.data.images) {
