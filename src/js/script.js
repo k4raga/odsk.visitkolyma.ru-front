@@ -22,10 +22,11 @@ window.addEventListener('DOMContentLoaded', (e) => {
         }
 
     }
+
     function createSocial(tagName, tagLink) {
         const SOCIAL_NOMINEE = document.querySelector('.social-nominee')
         let content = ''
-        if(SOCIAL_NOMINEE) {
+        if (SOCIAL_NOMINEE) {
             switch (tagName) {
                 case 'VK':
                     content = `
@@ -33,8 +34,8 @@ window.addEventListener('DOMContentLoaded', (e) => {
                             <img src="/local/templates/visitkolyma/assets/social_vk.png" alt="вк">
                         </a>
         `
-                SOCIAL_NOMINEE.innerHTML += content
-                break;
+                    SOCIAL_NOMINEE.innerHTML += content
+                    break;
                 case 'INSTAGRAM':
                     content = `
                     <a href="${tagLink}" target="_blank" id="social-link">
@@ -121,6 +122,14 @@ window.addEventListener('DOMContentLoaded', (e) => {
         el.classList.toggle('active')
     }
 
+    //push hash to localstorage
+    let urlParams = new URLSearchParams(window.location.search),
+        hash = urlParams.get('hash') ?? ''
+
+    if (hash) {
+        window.localStorage.setItem('hash', hash)
+    }
+
     // AJAX list
     const NOMINEE_ITEMS = document.querySelector('.nominee-items'),
         NOMINEE_WRAPPER = document.querySelector('.nominee')
@@ -144,8 +153,13 @@ window.addEventListener('DOMContentLoaded', (e) => {
     const ABOUT_NOMINEE = document.querySelector('.about-nominee')
     if (ABOUT_NOMINEE) {
         let urlParams = new URLSearchParams(window.location.search),
-            id = urlParams.get('id'),
+            id = urlParams.get('id')
+
+        if (window.localStorage.getItem('hash')) {
+            hash = window.localStorage.getItem('hash')
+        } else {
             hash = urlParams.get('hash') ?? ''
+        }
 
         if (!id) {
             window.location.href = "/"
@@ -205,13 +219,19 @@ window.addEventListener('DOMContentLoaded', (e) => {
                             break;
                         case 'vote':
                             let urlParams = new URLSearchParams(window.location.search),
-                                id = urlParams.get('id'),
+                                id = urlParams.get('id')
+
+                            if (window.localStorage.getItem('hash')) {
+                                hash = window.localStorage.getItem('hash')
+                            } else {
                                 hash = urlParams.get('hash') ?? ''
+                            }
 
                             for (let i = 0; i < BUTTONS_VOTE.length; i++) {
                                 let button_vote = BUTTONS_VOTE[i]
                                 button_vote.addEventListener('click', (e) => {
-                                    fetch(`/api/contest/voting/vote/?id=${id}&hash=${hash}`,{
+                                    console.log(hash)
+                                    fetch(`/api/contest/voting/vote/?id=${id}&hash=${hash}`, {
                                         method: 'POST',
                                     })
                                         .then((response) => {
@@ -228,7 +248,6 @@ window.addEventListener('DOMContentLoaded', (e) => {
                             }
                             break;
                     }
-
 
 
                 } else {
@@ -256,7 +275,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
                         return response.json()
                     })
                     .then((response) => {
-                        if(response.status){
+                        if (response.status) {
                             let popupEmail = document.querySelector('.email')
                             togglePopup(SIGNUP_FORM)
                             togglePopup(popupEmail)
