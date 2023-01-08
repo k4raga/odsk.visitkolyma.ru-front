@@ -24,39 +24,40 @@ window.addEventListener('DOMContentLoaded', (e) => {
     }
     function createSocial(tagName, tagLink) {
         const SOCIAL_NOMINEE = document.querySelector('.social-nominee')
-        if(ABOUT_NOMINEE) {
+        let content = ''
+        if(SOCIAL_NOMINEE) {
             switch (tagName) {
-                case'VK':
-                    const content = `
+                case 'VK':
+                    content = `
                     <a href="${tagLink}" target="_blank" id="social-link">
                             <img src="/local/templates/visitkolyma/assets/social_vk.png" alt="вк">
                         </a>
         `
-                SOCIAL_NOMINEE.innerHTML = content
+                SOCIAL_NOMINEE.innerHTML += content
                 break;
-            }
-            switch (tagName) {
-                case'INSTAGRAM':
-                    const content = `
+                case 'INSTAGRAM':
+                    content = `
                     <a href="${tagLink}" target="_blank" id="social-link">
-                            <img src="/local/templates/visitkolyma/assets/social_vk.png" alt="Инстаграм">
+                            <img src="/local/templates/visitkolyma/assets/social_media_button.png" alt="Инстаграм">
                         </a>
         `
-                    SOCIAL_NOMINEE.innerHTML = content
+                    SOCIAL_NOMINEE.innerHTML += content
                     break;
-            }
-            switch (tagName) {
-                case'PINTEREST':
-                    const content = `
+                case 'PINTEREST':
+                    content = `
                     <a href="${tagLink}" target="_blank" id="social-link">
                             <img src="/local/templates/visitkolyma/assets/social_pinterest.png" alt="Пинтерест">
                         </a>
         `
-                    SOCIAL_NOMINEE.innerHTML = content
+                    SOCIAL_NOMINEE.innerHTML += content
                     break;
-            }
-            switch (tagName) {
-                case'':
+                case 'TELEGRAM':
+                    content = `
+                    <a href="${tagLink}" target="_blank" id="social-link">
+                            <img src="/local/templates/visitkolyma/assets/social_telegram.png" alt="Телеграм">
+                        </a>
+        `
+                    SOCIAL_NOMINEE.innerHTML += content
                     break;
             }
         }
@@ -167,34 +168,68 @@ window.addEventListener('DOMContentLoaded', (e) => {
                     )
 
 
-                    //hidden VK if not exists
-                    // if (!response.data.socials.VK) {
-                    //     document.querySelector('.social-link').classList.add('hidden')
-                    // }
+                    //create socials
+                    for (const [socialName, socialLink] of Object.entries(response.data.socials)) {
+                        createSocial(socialName, socialLink)
+                    }
 
                     //create images library
                     for (const img of response.data.images) {
                         createImg(img)
                     }
 
-                    //event show popup
-                    const BUTTONS_VOTE = document.querySelectorAll('.btn-vote'),
-                        POPUP_AUTHORIZATION = document.querySelector('.authorization')
+                    //HANDLE ACTIONS
+                    const BUTTONS_VOTE = document.querySelectorAll('.btn-vote')
+                    switch (response.data.action) {
+                        case 'signup':
+                            const POPUP_AUTHORIZATION = document.querySelector('.authorization')
+                            if (POPUP_AUTHORIZATION) {
+                                const CLOSE_BUTTON_AUTHORIZATION = POPUP_AUTHORIZATION.querySelector('.close')
+                                // показываем авторизацию
+                                for (let i = 0; i < BUTTONS_VOTE.length; i++) {
+                                    let button_vote = BUTTONS_VOTE[i]
+                                    button_vote.addEventListener('click', (e) => {
+                                        togglePopup(POPUP_AUTHORIZATION)
+                                    })
+                                }
 
-                    if (POPUP_AUTHORIZATION) {
-                        const CLOSE_BUTTON_AUTHORIZATION = POPUP_AUTHORIZATION.querySelector('.close')
-                        // показываем авторизацию
-                        for (let i = 0; i < BUTTONS_VOTE.length; i++) {
-                            let button_vote = BUTTONS_VOTE[i]
-                            button_vote.addEventListener('click', (e) => {
-                                togglePopup(POPUP_AUTHORIZATION)
-                            })
-                        }
+                                CLOSE_BUTTON_AUTHORIZATION.addEventListener('click', (e) => {
+                                    togglePopup(POPUP_AUTHORIZATION)
+                                })
+                            }
+                            break;
+                        case 'hide':
+                            for (let i = 0; i < BUTTONS_VOTE.length; i++) {
+                                BUTTONS_VOTE[i].classList.add('hidden')
+                            }
+                            break;
+                        case 'vote':
+                            let urlParams = new URLSearchParams(window.location.search),
+                                id = urlParams.get('id'),
+                                hash = urlParams.get('hash') ?? ''
 
-                        CLOSE_BUTTON_AUTHORIZATION.addEventListener('click', (e) => {
-                            togglePopup(POPUP_AUTHORIZATION)
-                        })
+                            for (let i = 0; i < BUTTONS_VOTE.length; i++) {
+                                let button_vote = BUTTONS_VOTE[i]
+                                button_vote.addEventListener('click', (e) => {
+                                    fetch(`/api/contest/voting/vote/?id=${id}&hash=${hash}`,{
+                                        method: 'POST',
+                                    })
+                                        .then((response) => {
+                                            return response.json()
+                                        })
+                                        .then((response) => {
+                                            if (response.status) {
+                                                let popupVote = document.querySelector('.vote')
+                                                console.log(popupVote)
+                                                togglePopup(popupVote)
+                                            }
+                                        })
+                                })
+                            }
+                            break;
                     }
+
+
 
                 } else {
                     window.location.href = "/"
