@@ -143,13 +143,14 @@ window.addEventListener('DOMContentLoaded', (e) => {
     const ABOUT_NOMINEE = document.querySelector('.about-nominee')
     if (ABOUT_NOMINEE) {
         let urlParams = new URLSearchParams(window.location.search),
-            id = urlParams.get('id')
+            id = urlParams.get('id'),
+            hash = urlParams.get('hash') ?? ''
 
         if (!id) {
             window.location.href = "/"
         }
 
-        fetch(`/api/contest/participant/detail/?id=${id}`)
+        fetch(`/api/contest/participant/detail/?id=${id}&hash=${hash}`)
             .then((response) => {
                 return response.json()
             })

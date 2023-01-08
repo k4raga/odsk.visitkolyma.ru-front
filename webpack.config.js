@@ -63,7 +63,7 @@ module.exports = {
         new MiniCssExtractPlugin({
             filename: TemplatePath + "template_styles.css",
         }),
-        new FaviconsWebpackPlugin('./src/img/favicon2.ico')
+        new FaviconsWebpackPlugin(path.resolve(__dirname, 'src/img/favicon2.png'))
     ],
     module: {
         rules: [
