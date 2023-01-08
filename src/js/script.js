@@ -122,6 +122,36 @@ window.addEventListener('DOMContentLoaded', (e) => {
         el.classList.toggle('active')
     }
 
+    //variables
+    let popupSignUp = document.querySelector('.authorization'),
+        popupEmail = document.querySelector('.email'),
+        popupVote = document.querySelector('.vote')
+
+    for (const [key, popup] of Object.entries({signup: popupSignUp, email: popupEmail, vote: popupVote})) {
+        if (popup) {
+            let closeBtn = popup.querySelector('.close'),
+                okBtn = popup.querySelector('.btn-ok')
+
+            if (closeBtn) {
+                closeBtn.addEventListener('click', () => {
+                    togglePopup(popup)
+                    if (key === 'vote') {
+                        document.location.reload()
+                    }
+                })
+            }
+
+            if (okBtn) {
+                okBtn.addEventListener('click', () => {
+                    togglePopup(popup)
+                    if (key === 'vote') {
+                        document.location.reload()
+                    }
+                })
+            }
+        }
+    }
+
     //push hash to localstorage
     let urlParams = new URLSearchParams(window.location.search),
         hash = urlParams.get('hash') ?? ''
@@ -196,20 +226,14 @@ window.addEventListener('DOMContentLoaded', (e) => {
                     const BUTTONS_VOTE = document.querySelectorAll('.btn-vote')
                     switch (response.data.action) {
                         case 'signup':
-                            const POPUP_AUTHORIZATION = document.querySelector('.authorization')
-                            if (POPUP_AUTHORIZATION) {
-                                const CLOSE_BUTTON_AUTHORIZATION = POPUP_AUTHORIZATION.querySelector('.close')
+                            if (popupSignUp) {
                                 // показываем авторизацию
                                 for (let i = 0; i < BUTTONS_VOTE.length; i++) {
                                     let button_vote = BUTTONS_VOTE[i]
                                     button_vote.addEventListener('click', (e) => {
-                                        togglePopup(POPUP_AUTHORIZATION)
+                                        togglePopup(popupSignUp)
                                     })
                                 }
-
-                                CLOSE_BUTTON_AUTHORIZATION.addEventListener('click', (e) => {
-                                    togglePopup(POPUP_AUTHORIZATION)
-                                })
                             }
                             break;
                         case 'hide':
@@ -239,8 +263,6 @@ window.addEventListener('DOMContentLoaded', (e) => {
                                         })
                                         .then((response) => {
                                             if (response.status) {
-                                                let popupVote = document.querySelector('.vote')
-                                                console.log(popupVote)
                                                 togglePopup(popupVote)
                                             }
                                         })
@@ -276,9 +298,13 @@ window.addEventListener('DOMContentLoaded', (e) => {
                     })
                     .then((response) => {
                         if (response.status) {
-                            let popupEmail = document.querySelector('.email')
-                            togglePopup(SIGNUP_FORM)
+                            togglePopup(popupSignUp)
                             togglePopup(popupEmail)
+                        } else {
+                            if(response.message){
+                                popupSignUp.querySelector('.info').style.color = "red"
+                                popupSignUp.querySelector('.info').innerHTML = response.message
+                            }
                         }
                     })
             })
