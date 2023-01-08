@@ -5,6 +5,7 @@ const devMode = mode === 'development';
 const target = devMode ? 'web' : 'browserslist';
 const devtool = devMode ? 'source-map' : undefined;
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 
 const SitePath = 'htdocs'
 const TemplatePath = 'local/templates/visitkolyma/'
@@ -60,7 +61,8 @@ module.exports = {
         }),
         new MiniCssExtractPlugin({
             filename: TemplatePath + "template_styles.css",
-        })
+        }),
+        new FaviconsWebpackPlugin('./src/img/favicon2.ico')
     ],
     module: {
         rules: [
