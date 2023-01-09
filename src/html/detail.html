@@ -6,15 +6,26 @@
     <title>Открой для себя Колыму - страница номинанта</title>
     <meta name="description"
           content="«Страница номинанта на премию лучший тревел фотографа"/>
-    <meta name="robots" content="index" />
-    <meta name="yandex" content="index" />
+    <meta name="robots" content="index"/>
+    <meta name="yandex" content="index"/>
 </head>
 <body>
+<!--Шапка и логотип-->
+<div class="burger-wrap">
+    <ul class="ul-burger">
+        <li><a href="#about">О конкурсе</a></li>
+        <li><a href="#nominee">Номинанты</a></li>
+        <li><a href="#jury">Жюри</a></li>
+        <li><a href="#prizes">Призы</a></li>
+        <li><a href="#organizers">Организаторы</a></li>
+    </ul>
+</div>
+
 <!--Шапка и логотип-->
 <header class="container-min">
 
     <div class="logo">
-        <img src="../img/logo.png" alt="Логотип">
+        <a href="/"><img src="../img/logo.png" alt="Логотип"></a>
     </div>
     <nav>
         <ul>
@@ -24,9 +35,15 @@
             <li><a href="#prizes">Призы</a></li>
             <li><a href="#organizers">Организаторы</a></li>
         </ul>
+
+        <div class="burger-nav">
+            <div class="burger-img">
+                <img src="../img/icon.png" alt="бургер">
+            </div>
+
+        </div>
     </nav>
 </header>
-
 <main>
     <div class="wrapper container">
         <a href="/#nominee" class="link-back">
@@ -37,15 +54,15 @@
         <section class="about-nominee"></section>
         <section class="gallery-nominee"></section>
         <div class="more-wrapper">
-<!--            <div class="previous">-->
-<!--                <img src="../img/arror_details.png" alt="">-->
-<!--                Предыдущий-->
-<!--            </div>-->
+            <!--            <div class="previous">-->
+            <!--                <img src="../img/arror_details.png" alt="">-->
+            <!--                Предыдущий-->
+            <!--            </div>-->
             <div class="btn btn-vote">Проголосовать</div>
-<!--            <div class="next">-->
-<!--                Следующий-->
-<!--                <img src="../img/arror_details.png" alt="">-->
-<!--            </div>-->
+            <!--            <div class="next">-->
+            <!--                Следующий-->
+            <!--                <img src="../img/arror_details.png" alt="">-->
+            <!--            </div>-->
         </div>
         <div class="popup authorization">
 
@@ -63,7 +80,8 @@
                     <label for="email">Электронный адрес</label>
                     <input type="email" name="email" id="email" placeholder="Электронный адрес" required>
                     <label>
-                        <input type="checkbox" name="agree" required> Я согласен c <a href="index.html">политикой обработки
+                        <input type="checkbox" name="agree" required> Я согласен c <a href="index.html">политикой
+                        обработки
                         персональных
                         данных.</a>
                     </label>
@@ -126,7 +144,8 @@
         </div>
         <div class="contacts-item">
             <div class="line"></div>
-            <div class="description"><strong>ТИЦ Магаданской области</strong><br> г. Магадан, пер. Школьный, 3, оф. 213
+            <div class="description"><strong>ТИЦ Магаданской области</strong><br> г. Магадан, пер. Школьный, 3, оф.
+                213
                 visitkolyma@mail.ru 8
                 (4132) 60-70-11
             </div>

@@ -1,24 +1,34 @@
 @import "const";
 
+@media (max-width: 1450px){
+  .about .about-info h2 {
+    font-size: 60px;
+  }
+}
+.about .img-about img {
+
+  width: 540px;
+}
+
 @media (max-width: 1400px) {
   .container-min {
-    margin-right: 20px;
-    margin-left: 20px;
+    margin-right: 100px;
+    margin-left: 100px;
   }
 
   .container-middle {
-    margin-right: 20px;
-    margin-left: 20px;
+    margin-right: 100px;
+    margin-left: 100px;
   }
 
   .container {
-    margin-right: 20px;
-    margin-left: 20px;
+    margin-right: 100px;
+    margin-left: 100px;
   }
 
   .container-detail {
-    margin-right: 20px;
-    margin-left: 20px;
+    margin-right: 100px;
+    margin-left: 100px;
   }
 
   .about .about-info p {
@@ -34,25 +44,17 @@
 
 @media (max-width: 1400px) {
   //Шапка
-  header {
-    ul {
-      display: none;
 
-      li {
-        display: none;
-      }
-    }
-  }
 
   //  о конкурсе
   .about {
     justify-content: flex-start;
-    gap: 0;
-    height: 600px;
+
+
 
     .img-about {
       img {
-        display: none;
+
       }
     }
 
@@ -114,7 +116,6 @@
 
     .title-prizes {
       gap: 0;
-      justify-content: flex-start;
       flex-wrap: wrap;
 
 
@@ -228,7 +229,7 @@
 
 
       .item-stages {
-        max-width: 250px;
+        max-width: 200px;
 
         &:hover {
           .back {
@@ -293,11 +294,71 @@
       }
     }
   }
+  .jury .jury-items .jury-item img {
 
-
-
+    width: 140px;
+  }
 
 }
+@media (max-width: 1200px) {
+  header {
+    ul {
+      display: none;
+
+      li {
+        display: none;
+      }
+    }
+  }
+  header nav .burger-nav {
+    display: block;
+  }
+  .container-min {
+    margin-right: 20px;
+    margin-left: 20px;
+  }
+
+  .container-middle {
+    margin-right: 20px;
+    margin-left: 20px;
+  }
+
+  .container {
+    margin-right: 20px;
+    margin-left: 20px;
+  }
+
+  .container-detail {
+    margin-right: 20px;
+    margin-left: 20px;
+  }
+
+  .about .about-info p {
+    max-width: none;
+    margin-bottom: 30px;
+  }
+
+  h1 {
+    font-size: 60px;
+  }
+
+  .about {
+    justify-content: flex-start;
+
+
+
+    .img-about {
+      img {
+        display: none;
+      }
+    }
+  }
+
+}
+
+
+
+
 
 @media (max-width: 992px) {
   .nominee {
@@ -404,7 +465,7 @@
       justify-content: flex-start;
 
       .jury-item {
-        max-width: 250px;
+        max-width: 200px;
 
         .title {
         }
@@ -631,7 +692,7 @@
   }
 
   .about {
-    height: 720px;
+
 
     .img-about {
       img {
@@ -826,7 +887,7 @@
 
 
   .about {
-    height: 700px;
+
 
 
     p {
@@ -885,7 +946,7 @@
 
     .jury-items {
       display: flex;
-      gap: 30px;
+      gap: 136px;
       justify-content: flex-start;
       flex-wrap: wrap;
 
@@ -1004,6 +1065,12 @@
 
 
 @media (max-width: 472px) {
+  .about {
+    gap: 0;
+  }
+  .about .about-info h2 {
+    font-size: 40px;
+  }
   .about-nominee .photographer-wrapper .photographer .name-nominee {
     color: #19181D;
     font-weight: 700;

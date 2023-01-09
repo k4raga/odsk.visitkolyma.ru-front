@@ -1,5 +1,22 @@
 @import "const";
 
+.burger-wrap {
+  display: none;
+  position: fixed;
+  width: 120vw;
+  height: 120vh;
+  background-color: @main-back;
+  overflow: hidden;
+  z-index: 25;
+  top: 80px;
+  .ul-burger {
+    flex-direction: column;
+    gap: 40px;
+    top:50px;
+    font-size: 28px;
+  }
+}
+
 //Шапка и логотип
 header {
   display: flex;
@@ -28,6 +45,13 @@ header {
         font-weight: 600;
         color: @main-text;
       }
+
+    }
+    .burger-nav {
+      display: none;
+
+
+
     }
   }
 }
@@ -75,11 +99,10 @@ header {
   display: flex;
   justify-content: center;
   gap: 40px;
-  height: 830px;
+
 
   .img-about {
     img {
-      height: 830px;
       width: 740px;
     }
   }
@@ -152,6 +175,7 @@ header {
     display: flex;
     gap: 40px;
     position: relative;
+    justify-content: space-between;
 
     .item-stages {
       &:hover {
@@ -228,8 +252,7 @@ header {
 
   .jury-items {
     display: flex;
-    gap: 30px;
-    justify-content: flex-start;
+    justify-content: space-between;
     flex-wrap: wrap;
 
     .jury-item {
@@ -498,5 +521,6 @@ footer {
     }
   }
 }
+
 
 

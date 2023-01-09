@@ -23,6 +23,36 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
     }
 
+    {
+        let burger = document.querySelector('.burger-wrap')
+        {
+            if (burger) {
+                let burgerImg = document.querySelector('.burger-img')
+                let burgerClose = document.querySelector('.close-burger')
+                let links = burger.getElementsByTagName('a')
+
+                for (let link of links) {
+                    link.addEventListener('click', (e) => {
+                        burger.classList.remove('active')
+                        document.body.style.overflow = 'scroll'
+                    })
+                }
+
+
+                burgerImg.addEventListener('click', (e) => {
+                    burger.classList.toggle('active')
+                    if (burger.classList.contains('active')) {
+                        document.body.style.overflow = 'hidden'
+                    } else {
+                        document.body.style.overflow = 'scroll'
+                    }
+
+                })
+
+            }
+        }
+    }
+
     function createSocial(tagName, tagLink) {
         const SOCIAL_NOMINEE = document.querySelector('.social-nominee')
         let content = ''
@@ -301,7 +331,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
                             togglePopup(popupSignUp)
                             togglePopup(popupEmail)
                         } else {
-                            if(response.message){
+                            if (response.message) {
                                 popupSignUp.querySelector('.info').style.color = "red"
                                 popupSignUp.querySelector('.info').innerHTML = response.message
                             }
