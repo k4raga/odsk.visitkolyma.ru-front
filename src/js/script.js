@@ -243,7 +243,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
 
                     //create socials
-                    if(response.data.socials) {
+                    if(response.data.socials.length) {
                         for (const [socialName, socialLink] of Object.entries(response.data.socials)) {
                             createSocial(socialName, socialLink)
                         }
@@ -287,7 +287,6 @@ window.addEventListener('DOMContentLoaded', (e) => {
                             for (let i = 0; i < BUTTONS_VOTE.length; i++) {
                                 let button_vote = BUTTONS_VOTE[i]
                                 button_vote.addEventListener('click', (e) => {
-                                    console.log(hash)
                                     fetch(`/api/contest/voting/vote/?id=${id}&hash=${hash}`, {
                                         method: 'POST',
                                     })
@@ -342,6 +341,55 @@ window.addEventListener('DOMContentLoaded', (e) => {
                     })
             })
         }
+
+        fetch('/api/contest/participant/list/')
+            .then((response) => {
+                return response.json()
+            })
+            .then((response) => {
+                if (response.status) {
+                    let currentKey = undefined
+                    for (const [key, el] of Object.entries(response.data)) {
+                        if (el.id === id) {
+                            currentKey = key
+                        }
+                    }
+
+                    let showMore = false,
+                        prevFound = false,
+                        nextFound = false
+                    if (currentKey !== undefined && response.data[parseInt(currentKey) - 1] !== undefined) {
+                        document.getElementById('btn-more-prev').href = `/detail/?id=${response.data[parseInt(currentKey) - 1].id}`
+                        document.getElementById('btn-more-prev').classList.remove('hidden')
+                        showMore = true
+                        prevFound = true
+                    }
+
+                    if (!prevFound) {
+                        document.getElementById('btn-more-prev').href = `/detail/?id=${response.data[response.data.length - 1].id}`
+                        document.getElementById('btn-more-prev').classList.remove('hidden')
+                    }
+
+                    if (currentKey !== undefined && response.data[parseInt(currentKey) + 1] !== undefined) {
+                        document.getElementById('btn-more-next').href = `/detail/?id=${response.data[parseInt(currentKey) + 1].id}`
+                        document.getElementById('btn-more-next').classList.remove('hidden')
+                        showMore = true
+                        nextFound = true
+                    }
+
+                    if (!nextFound) {
+                        document.getElementById('btn-more-next').href = `/detail/?id=${response.data[0].id}`
+                        document.getElementById('btn-more-next').classList.remove('hidden')
+                    }
+
+                    if (showMore) {
+                        let moreWrapper = document.querySelector('.more-wrapper')
+                        if (moreWrapper) {
+                            moreWrapper.classList.toggle('btw')
+                        }
+                    }
+                }
+            })
 
     }
 

@@ -26,8 +26,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    &.btw{
+      justify-content: space-between;
+    }
 
-    .previous{
+    .btn-more {
       display: flex;
       gap: 16px;
       align-items: center;
@@ -36,26 +39,19 @@
       line-height: 36px;
       letter-spacing: 0.5px;
       color: #919095;
-      margin-bottom: 36px;
-      img{
+      margin-top: -6px;
+      img {
         width: 12px;
         height: 36px
       }
-    }
-    .next{
-      display: flex;
-      gap: 16px;
-      align-items: center;
-      font-weight: 400;
-      font-size: 24px;
-      line-height: 36px;
-      letter-spacing: 0.5px;
-      color: #919095;
-      margin-bottom: 36px;
-      img{
-        transform: rotate(180deg);
-        width: 12px;
-        height: 36px
+
+      &.previous {
+      }
+
+      &.next {
+        img {
+          transform: rotate(180deg);
+        }
       }
     }
   }
@@ -79,9 +75,6 @@
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    .btn{
-      height: 30px;
-    }
     .photographer {
       display: flex;
       gap: 32px;
