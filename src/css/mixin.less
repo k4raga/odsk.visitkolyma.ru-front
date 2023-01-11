@@ -1,38 +1,19 @@
 @import "const";
 
-@media (max-width: 1450px){
+@media (max-width: 1450px) {
   .about .about-info h2 {
     font-size: 60px;
   }
 }
+
 .about .img-about img {
 
   width: 540px;
 }
 
 @media (max-width: 1400px) {
-  .container-min {
-    margin-right: 100px;
-    margin-left: 100px;
-  }
-
-  .container-middle {
-    margin-right: 100px;
-    margin-left: 100px;
-  }
-
-  .container {
-    margin-right: 100px;
-    margin-left: 100px;
-  }
-
-  .container-detail {
-    margin-right: 100px;
-    margin-left: 100px;
-  }
 
   .about .about-info p {
-    max-width: none;
     margin-bottom: 30px;
   }
 
@@ -44,12 +25,9 @@
 
 @media (max-width: 1400px) {
   //Шапка
-
-
   //  о конкурсе
   .about {
     justify-content: flex-start;
-
 
 
     .img-about {
@@ -59,7 +37,7 @@
     }
 
     p {
-      max-width: none;
+
     }
 
   }
@@ -88,13 +66,13 @@
 
     //стадии
     .numbs-stages {
-      flex-wrap: wrap;
+
 
       .arrow {
       }
 
       .item-stages {
-        max-width: 300px;
+
       }
     }
   }
@@ -188,9 +166,9 @@
 
 
         .nomination-wrapper {
-
+          flex-wrap: wrap;
           .title {
-            max-width: 600px;
+            width: 600px;
           }
 
           .description {
@@ -229,7 +207,7 @@
 
 
       .item-stages {
-        max-width: 200px;
+
 
         &:hover {
           .back {
@@ -279,7 +257,7 @@
     .jury-items {
 
       .jury-item {
-        max-width: 160px;
+
 
         .title {
         }
@@ -294,12 +272,14 @@
       }
     }
   }
+
   .jury .jury-items .jury-item img {
 
-    width: 140px;
+
   }
 
 }
+
 @media (max-width: 1200px) {
   header {
     ul {
@@ -310,31 +290,13 @@
       }
     }
   }
+
   header nav .burger-nav {
     display: block;
   }
-  .container-min {
-    margin-right: 20px;
-    margin-left: 20px;
-  }
-
-  .container-middle {
-    margin-right: 20px;
-    margin-left: 20px;
-  }
-
-  .container {
-    margin-right: 20px;
-    margin-left: 20px;
-  }
-
-  .container-detail {
-    margin-right: 20px;
-    margin-left: 20px;
-  }
 
   .about .about-info p {
-    max-width: none;
+
     margin-bottom: 30px;
   }
 
@@ -344,8 +306,7 @@
 
   .about {
     justify-content: flex-start;
-
-
+    gap: 0;
 
     .img-about {
       img {
@@ -354,11 +315,38 @@
     }
   }
 
+  .jury {
+    .title-jury {
+
+      h3 {
+      }
+
+      .descriptions-jury {
+      }
+    }
+
+    .jury-items {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 32px;
+
+      .jury-item {
+
+
+        .title {
+        }
+
+        .description {
+        }
+
+        img {
+          &:hover {
+          }
+        }
+      }
+    }
+  }
 }
-
-
-
-
 
 @media (max-width: 992px) {
   .nominee {
@@ -372,8 +360,7 @@
       .nominee-item {
 
         .nominee-img {
-          width: 300px;
-          height: 168px;
+
         }
 
         .nominee-search {
@@ -422,7 +409,7 @@
 
 
       .item-stages {
-        width: 200px;
+
 
         &:hover {
           .back {
@@ -461,11 +448,12 @@
     }
 
     .jury-items {
-      gap: 50px;
-      justify-content: flex-start;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 32px;
 
       .jury-item {
-        max-width: 200px;
+
 
         .title {
         }
@@ -534,10 +522,11 @@
       }
     }
   }
-  .gallery-nominee{
 
-    .photo-item{
-      img{
+  .gallery-nominee {
+
+    .photo-item {
+      img {
         object-fit: cover;
         max-width: 1162px;
         width: 100%;
@@ -545,8 +534,37 @@
     }
   }
 
+  .stages {
+    margin-bottom: 150px;
 
+    .title-stages {
+      display: flex;
+      gap: 40px;
+      margin-top: 50px;
+      margin-bottom: 50px;
+
+      h3 {
+
+      }
+
+      .descriptions-stages {
+
+
+      }
+    }
+
+    .numbs-stages {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 32px;
+      position: relative;
+
+
+    }
+  }
 }
+
+
 
 
 @media (max-width: 768px) {
@@ -572,10 +590,64 @@
     }
 
     .numbs-stages {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 32px;
+      position: relative;
 
 
       .item-stages {
-        width: 220px;
+        &:hover {
+          .back {
+            opacity: 1;
+          }
+        }
+
+        .back {
+          opacity: 0;
+          position: absolute;
+          top: -165px;
+          margin-right: 1px;
+          z-index: -1;
+
+          img {
+            position: absolute;
+            left: -60px;
+
+          }
+        }
+      }
+    }
+
+
+  }
+
+  .stages {
+    margin-bottom: 150px;
+
+    .title-stages {
+      display: flex;
+      gap: 40px;
+      margin-top: 50px;
+      margin-bottom: 50px;
+
+      h3 {
+
+      }
+
+      .descriptions-stages {
+
+        font-size: 17px;
+        line-height: 1.55;
+        font-weight: 400;
+      }
+    }
+
+    .numbs-stages {
+
+
+      .item-stages {
+
 
         &:hover {
           .back {
@@ -666,6 +738,8 @@
       }
     }
   }
+  footer .footer-wrapper h1 {
+    font-size: 80px;}
 }
 
 @media (max-width: 576px) {
@@ -726,10 +800,11 @@
     }
 
     .nominee-items {
+      grid-template-columns: repeat(1, 1fr);
+
       .nominee-item {
         .nominee-img {
-          width: 254px;
-          height: 160px;
+
         }
 
         .nominee-search {
@@ -760,12 +835,10 @@
 
           .title {
             font-size: 30px;
-            max-width: 200px;
           }
 
           .description {
             font-size: 14px;
-            max-width: 200px;
           }
         }
       }
@@ -889,7 +962,6 @@
   .about {
 
 
-
     p {
       font-size: 15px;
     }
@@ -914,12 +986,13 @@
 
         .nominee-img {
           object-fit: cover;
-          width: 320px;
-          height: 200px;
+
+
         }
 
       }
     }
+
   }
 
   .jury {
@@ -945,10 +1018,9 @@
     }
 
     .jury-items {
-      display: flex;
-      gap: 136px;
-      justify-content: flex-start;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      grid-gap: 32px;
 
       .jury-item {
         display: flex;
@@ -957,31 +1029,25 @@
 
 
         .title {
-          font-size: 17px;
-          font-weight: 700;
-          letter-spacing: 0.5px;
-          color: @main-accent;
-          width: 320px;
+
         }
 
         .description {
-          font-weight: 400;
-          width: 320px;
-          max-width: 320px;
+
         }
 
         img {
-          -webkit-filter: grayscale(100%);
-          height: 420px;
-          width: 320px;
+
+
 
           &:hover {
-            -webkit-filter: grayscale(0%);
+
           }
         }
 
       }
     }
+
   }
 
   .quote {
@@ -1039,27 +1105,55 @@
       }
     }
   }
-}
-@media (max-width: 680px) {
-  footer .footer-wrapper h1 {
-    font-size: 80px;
+  .stages {
+    margin-bottom: 150px;
+
+    .title-stages {
+      display: flex;
+      gap: 40px;
+      margin-top: 50px;
+      margin-bottom: 50px;
+
+      h3 {
+
+      }
+
+      .descriptions-stages {
+
+
+      }
+    }
+
+    .numbs-stages {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      grid-gap: 32px;
+      position: relative;
+      align-items: center;
+
+    }
+    .item-stages {
+      align-self: center;
+    }
   }
-
-
 }
+
+
+
 @media (max-width: 954px) {
   .more-wrapper {
     .btn {
       display: none;
     }
   }
+
   .about-nominee .photographer-wrapper .btn {
     height: 30px;
     position: fixed;
     bottom: 50px;
-    top:90%;
-    left:50%;
-    transform:translate(-50%, -50%);
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 }
 
@@ -1068,28 +1162,34 @@
   .about {
     gap: 0;
   }
+
   .about .about-info h2 {
     font-size: 40px;
   }
+
   .about-nominee .photographer-wrapper .photographer .name-nominee {
     color: #19181D;
     font-weight: 700;
     font-size: 30px;
     line-height: 35px;
   }
+
   footer .footer-wrapper h1 {
     font-size: 30px;
   }
+
   .wrapper .more-wrapper .next {
 
     font-size: 14px;
 
   }
+
   .wrapper .more-wrapper .previous {
 
     font-size: 14px;
 
   }
+
   .about-nominee .photographer-wrapper .photographer {
     display: flex;
     gap: 32px;
@@ -1101,9 +1201,11 @@
     .popup-block {
       width: 90vw;
       height: 100vh;
+
       .title {
         font-size: 32px;
       }
+
       .close {
         right: 50px;
         top: 75px;

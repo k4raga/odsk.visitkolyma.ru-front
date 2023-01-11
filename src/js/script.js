@@ -243,9 +243,12 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
 
                     //create socials
-                    for (const [socialName, socialLink] of Object.entries(response.data.socials)) {
-                        createSocial(socialName, socialLink)
+                    if(response.data.socials) {
+                        for (const [socialName, socialLink] of Object.entries(response.data.socials)) {
+                            createSocial(socialName, socialLink)
+                        }
                     }
+
 
                     //create images library
                     for (const img of response.data.images) {
