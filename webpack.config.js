@@ -70,6 +70,9 @@ module.exports = {
             {
                 test: /\.html$/i,
                 loader: "html-loader",
+                options: {
+                    minimize: false,
+                },
             },
             {
                 test: /\.(c|le)ss$/i,

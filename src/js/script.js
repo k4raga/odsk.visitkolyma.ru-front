@@ -243,7 +243,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
 
                     //create socials
-                    if(response.data.socials.length) {
+                    if(Object.entries(response.data.socials).length) {
                         for (const [socialName, socialLink] of Object.entries(response.data.socials)) {
                             createSocial(socialName, socialLink)
                         }
