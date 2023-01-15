@@ -77,7 +77,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
                 case 'PINTEREST':
                     content = `
                     <a href="${tagLink}" target="_blank" id="social-link">
-                            <img src="/local/templates/visitkolyma/assets/social_pinterest.png" alt="Пинтерест">
+                            <img src="/local/templates/visitkolyma/assets/social_classmates.png" alt="Одноклассники">
                         </a>
         `
                     SOCIAL_NOMINEE.innerHTML += content
