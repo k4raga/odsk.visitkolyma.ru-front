@@ -119,7 +119,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
                     <div class="social-nominee">
                     </div>
                 </div>
-                <div class="btn btn-vote">Проголосовать</div>
+                <div class="btn btn-vote">Авторизоваться и проголосовать</div>
             </div>
             <div class="wrapper-details">
                 <div class="profession">
@@ -275,9 +275,11 @@ window.addEventListener('DOMContentLoaded', (e) => {
                             }
                             break;
                         case 'vote':
-                            let urlParams = new URLSearchParams(window.location.search),
+                            let urlParams = new URLSearchParams(window.location.search)
                                 id = urlParams.get('id')
-
+                            for (let i = 0; i < BUTTONS_VOTE.length; i++) {
+                                BUTTONS_VOTE[i].textContent = 'Проголосовать'
+                            }
                             if (window.localStorage.getItem('hash')) {
                                 hash = window.localStorage.getItem('hash')
                             } else {

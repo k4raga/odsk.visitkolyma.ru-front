@@ -8,20 +8,30 @@
     <meta name="robots" content="index"/>
     <meta name="yandex" content="index"/>
     <!-- Yandex.Metrika counter -->
-    <script type="text/javascript" >
-        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-            m[i].l=1*new Date();
-            for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-            k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+    <script type="text/javascript">
+        (function (m, e, t, r, i, k, a) {
+            m[i] = m[i] || function () {
+                (m[i].a = m[i].a || []).push(arguments)
+            };
+            m[i].l = 1 * new Date();
+            for (var j = 0; j < document.scripts.length; j++) {
+                if (document.scripts[j].src === r) {
+                    return;
+                }
+            }
+            k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+        })
         (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 
         ym(90585747, "init", {
-            clickmap:true,
-            trackLinks:true,
-            accurateTrackBounce:true
+            clickmap: true,
+            trackLinks: true,
+            accurateTrackBounce: true
         });
     </script>
-    <noscript><div><img src="https://mc.yandex.ru/watch/90585747" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <noscript>
+        <div><img src="https://mc.yandex.ru/watch/90585747" style="position:absolute; left:-9999px;" alt=""/></div>
+    </noscript>
     <!-- /Yandex.Metrika counter -->
 </head>
 <body>
@@ -73,7 +83,7 @@
                 <img src="../img/arror_details.png" alt="">
                 Предыдущий
             </a>
-            <div class="btn btn-vote">Проголосовать</div>
+            <div class="btn btn-vote">Авторизоваться и проголосовать</div>
             <a class="btn-more next hidden" id="btn-more-next">
                 Следующий
                 <img src="../img/arror_details.png" alt="">
@@ -86,8 +96,9 @@
                     <img src="../img/close.png" alt="Закрыть">
                 </div>
                 <div class="title">Авторизоваться</div>
-                <div class="subtitle">Вы сможете проголосовать после авторизации, для этого заполните форму. Ссылка для голосования будет направлена на указанный электронный
-                    адрес.
+                <div class="subtitle">Вы сможете проголосовать после авторизации, для этого заполните форму и перейдите
+                    по ссылке из полученного письма. Далее – проголосуйте за вашего номинанта.
+
                 </div>
                 <form class="authorization-form" action="">
                     <label for="fio">ФИО</label>
@@ -95,15 +106,17 @@
                     <label for="email">Электронный адрес</label>
                     <input type="email" name="email" id="email" placeholder="Электронный адрес" required>
                     <label class="last-label">
-                        <input type="checkbox" name="agree" required> Я согласен c <a href="https://disk.yandex.ru/i/EfVDgOOkrFVgnA" target="_blank">политикой
+                        <input type="checkbox" name="agree" required> Я согласен c <a
+                            href="https://disk.yandex.ru/i/EfVDgOOkrFVgnA" target="_blank">политикой
                         обработки
                         персональных
                         данных.</a>
                     </label>
                     <button type="submit" class="btn">Получить ссылку</button>
                 </form>
-                <div class="info">Ссылка для голосования отправлена на указанный адрес. Если вы не получили письмо, проверьте, правильно ли указан электронный адрес, также
-                    проверьте папку "Спам".
+                <div class="info">Ссылка для голосования будет отправлена на указанный адрес. Если вы не получили
+                    письмо, проверьте, правильно ли указан электронный адрес, также проверьте папку "Спам".
+                    Перейдите по ссылке и проголосуйте!
                 </div>
             </div>
         </div>
@@ -113,7 +126,9 @@
                     <img src="../img/close.png" alt="Закрыть">
                 </div>
                 <div class="title">Спасибо!</div>
-                <div class="subtitle">Ссылка для авторизации направлена вам на email</div>
+                <div class="subtitle">Перейдите по ссылке из письма и проголосуйте!
+                    Проверьте папку “спам”, если письмо не получено.
+                </div>
                 <div class="btn btn-ok">Ок</div>
             </div>
 
