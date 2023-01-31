@@ -193,7 +193,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
     // AJAX list
     const NOMINEE_ITEMS = document.querySelector('.nominee-items'),
         NOMINEE_WRAPPER = document.querySelector('.nominee')
-    if (NOMINEE_ITEMS) {
+    if (!NOMINEE_ITEMS) {
         fetch('/api/contest/participant/list/')
             .then((response) => {
                 return response.json()
@@ -211,7 +211,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
     // AJAX detail
     const ABOUT_NOMINEE = document.querySelector('.about-nominee')
-    if (ABOUT_NOMINEE) {
+    if (!ABOUT_NOMINEE) {
         let urlParams = new URLSearchParams(window.location.search),
             id = urlParams.get('id')
 
@@ -222,7 +222,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
         }
 
         if (!id) {
-            window.location.href = "/"
+            // window.location.href = "/"
         }
 
         fetch(`/api/contest/participant/detail/?id=${id}&hash=${hash}`)
