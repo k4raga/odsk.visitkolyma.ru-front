@@ -211,7 +211,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
     // AJAX detail
     const ABOUT_NOMINEE = document.querySelector('.about-nominee')
-    if (!ABOUT_NOMINEE) {
+    if (ABOUT_NOMINEE) {
         let urlParams = new URLSearchParams(window.location.search),
             id = urlParams.get('id')
 
@@ -307,7 +307,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
 
 
                 } else {
-                    window.location.href = "/"
+                    // window.location.href = "/"
                 }
             })
 
