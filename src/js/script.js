@@ -119,7 +119,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
                     <div class="social-nominee">
                     </div>
                 </div>
-                <div class="btn btn-vote">Авторизоваться и проголосовать</div>
+<!--                <div class="btn btn-vote">Авторизоваться и проголосовать</div>-->
             </div>
             <div class="wrapper-details">
                 <div class="profession">
