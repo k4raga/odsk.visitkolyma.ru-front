@@ -9,10 +9,11 @@
   overflow: hidden;
   z-index: 25;
   top: 80px;
+
   .ul-burger {
     flex-direction: column;
     gap: 40px;
-    top:50px;
+    top: 50px;
     font-size: 28px;
   }
 }
@@ -23,10 +24,12 @@ header {
   justify-content: space-between;
   height: 80px;
   flex-wrap: wrap;
+
   .logo {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
+
     img {
       width: 90px;
       height: 50px;
@@ -47,6 +50,7 @@ header {
       }
 
     }
+
     .burger-nav {
       display: none;
 
@@ -159,9 +163,7 @@ header {
     margin-top: 50px;
     margin-bottom: 50px;
 
-    h3 {
-
-    }
+    h3 {}
 
     .descriptions-stages {
 
@@ -347,6 +349,7 @@ header {
         margin-top: 50px;
         display: flex;
         justify-content: space-between;
+
         .title {
           font-size: 50px;
           line-height: 1.1;
@@ -391,6 +394,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+
     .numb {
       font-size: 70px;
       line-height: 47px;
@@ -500,6 +504,7 @@ footer {
     margin-bottom: 100px;
     flex-wrap: wrap;
     gap: 50px;
+
     .contacts-item {
       width: 290px;
 
@@ -516,16 +521,19 @@ footer {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+
     .title {
       font-weight: 700;
     }
   }
 }
+
 .nominee {
-.line {
-  margin-bottom: 80px;
-  margin-top: 80px;
-}
+  .line {
+    margin-bottom: 80px;
+    margin-top: 80px;
+  }
+
   .title-end {
     font-size: 50px;
     line-height: 55px;
@@ -534,6 +542,7 @@ footer {
     max-width: 894px;
     margin-bottom: 24px;
   }
+
   .subtitle-end {
     font-weight: 400;
     font-size: 24px;
@@ -544,10 +553,290 @@ footer {
   }
 }
 
+.winner_container {
+  display: flex;
+  flex-direction: column;
+}
+
+.slick-dots li button:hover,
+.slick-dots li button:focus {
+  outline: none;
+}
+
+.slick-dots {
+  position: absolute;
+  bottom: -40px;
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-align: center;
+}
+
+.slick-dots li {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin: 0 5px;
+  padding: 0;
+  cursor: pointer;
+}
+
+.slick-dots li button {
+  font-size: 0;
+  line-height: 0;
+  display: block;
+  width: 20px;
+  height: 20px;
+  padding: 5px;
+  cursor: pointer;
+  // color: transparent;
+  border: 0;
+  outline: none;
+  background: transparent;
+}
+
+.slick-dots li button::before {
+  font-family: 'slick';
+  font-size: 40px;
+  line-height: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  content: '•';
+  text-align: center;
+  color: white;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.slick-dots li.slick-active button::before {
+  color: #00A2A2;
+}
+
+.slick-prev {
+  left: -40px;
+}
+
+.slick-next {
+  right: -40px;
+}
+
+.slick-prev,
+.slick-next {
+  font-size: 0;
+  line-height: 0;
+  position: absolute;
+  top: 50%;
+  display: block;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  -webkit-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  cursor: pointer;
+  color: transparent;
+  border: none;
+  outline: none;
+  background: transparent;
+}
 
 
+.slick-prev::before {
+  content: url("/src/img/winner/left_ar.png");
+}
+
+.slick-next::before {
+  content: url("/src/img/winner/right_ar.png");
+}
+
+.slick-prev::before,
+.slick-next::before {
+
+  font-family: 'slick';
+  font-size: 70px;
+  line-height: 1;
+  opacity: .75;
+  color: white;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+}
+
+.winner_gallery {
+  margin-bottom: 150px;
+
+  a {
+    height: 100px;
+    width: 100px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  img {
+    height: 642px;
+    display: block;
+    margin: auto;
+    object-fit: cover;
+  }
+}
 
 
+.winner_about {
+  display: flex;
+  margin-bottom: 75px;
+  gap: 48px;
+
+  .winner-selfie {
+    img {
+      max-width: 370px;
+      height: 370px;
+      object-fit: contain;
+    }
+  }
+
+  .winner_more-info {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    font-size: 17px;
+    line-height: 26px;
+
+    span {
+      font-weight: 700;
+    }
+
+    .winner_title__wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+
+      .winner_winner {
+        font-size: 20px;
+        letter-spacing: 0.5px;
+        color: #919095;
+        font-weight: 700;
+      }
+
+      .winner_name_wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .winner_name {
+          font-weight: 700;
+          font-size: 50px;
+          line-height: 55px;
+        }
+      }
+    }
+
+    .winner_profession {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .winner_about {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 75px;
+    gap: 48px;
+  }
+
+  .winner_about {
+
+    .winner-selfie {
+      img {
+        max-width: 300px;
+        height: 300px;
+        object-fit: contain;
+      }
+    }
+  }
+
+  .winner_gallery {
+    a {
+      height: 100px;
+      width: 100px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+    }
+
+    img {
+      height: 300px;
+      display: block;
+      margin: auto;
+      object-fit: cover;
+    }
+  }
 
 
+}
 
+.advt {
+  margin-bottom: 60px;
+
+  .advt_wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 37px;
+    letter-spacing: 0.5px;
+    span {
+      font-weight: 400;
+    }
+    .advt_title{
+      font-size: 50px;
+      line-height: 57px;
+      color: white;
+    }
+    .advt_close {
+      margin-bottom: 60px;
+    }
+  }
+}
+
+@media (max-width: 800px) {
+      .advt {
+          margin-bottom: 60px;
+
+          .advt_wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 37px;
+            letter-spacing: 0.5px;
+
+            span {
+              font-weight: 400;
+            }
+
+            .advt_title {
+              font-size: 40px;
+              line-height: 54px;
+              color: white;
+            }
+          }
+        }
+
+}
